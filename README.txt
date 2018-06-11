@@ -13,6 +13,8 @@ Shared theme for Shoptet microsites.
 
 == Installation ==
 
+See README.md in unique microsite repository, e.g. https://github.com/Shoptet/microsite-api
+
 == Changelog ==
 
 = 1.0 =
