@@ -1,4 +1,5 @@
 [submodule "scaffolding"]
 	path = scaffolding
 	url = git@github.com:Shoptet/microsite-styles.git
+	branch = master
 	ignore = dirty
