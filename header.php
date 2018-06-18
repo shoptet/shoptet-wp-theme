@@ -11,7 +11,7 @@
 
   <body <?php body_class(isset($class) ? $class : ''); ?>>
 
-    <header id="header">
+    <header id="header" class="header">
         <div class="header-inner container">
         <div id="shp_header">
             <a href="/">

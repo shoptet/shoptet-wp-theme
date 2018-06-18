@@ -1,10 +1,10 @@
 <?php
-/*spl_autoload_register(function($name) {
+spl_autoload_register(function($name) {
     $file = __DIR__ . '/shoptet/' . $name . '.php';
     if (file_exists($file)) {
         require_once $file;
     }
-}, TRUE, TRUE);*/
+}, TRUE, TRUE);
 
 require_once 'src/functions.php';
 
@@ -128,7 +128,7 @@ add_action( 'wp_enqueue_scripts', 'shoptet_theme_enqueue_scripts', 1 );
 function get_shoptet_footer() {
     // params
     $id = 'shoptetcz';
-    $temp = 'wp-content/themes/shoptet-theme/tmp/shoptet-footer.html';
+    $temp = 'wp-content/themes/shoptet-wp-theme/tmp/shoptet-footer.html';
 
     $url = 'https://www.shoptet.cz/action/ShoptetFooter/render/';
     $cache = 24 * 60 * 60;
@@ -187,5 +187,6 @@ function my_widget_title()
 add_action( 'widgets_init', 'arphabet_widgets_init' );
 
 add_filter('show_admin_bar', '__return_false');
+add_theme_support( 'post-thumbnails' );
 
 ?>

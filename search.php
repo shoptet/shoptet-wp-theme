@@ -18,7 +18,7 @@
                 get_template_part( 'template-parts/post/content', 'excerpt' );
             endwhile;
         else : ?>
-            Žádné výsleky nenalezeny.
+            Žádné výsledky nenalezeny.
         <?php
         endif;
         ?>

@@ -1,13 +1,11 @@
 <?php get_header(); ?>
 
-    <section class="section section-claim">
-        <div class="section-inner container">
-            <div class="claim">
-                <div class="claim-inner">
-                    <?php bloginfo('description'); ?>
-                </div>
+<section class="section section-claim">
+    <div class="section-inner container">
+        <div class="claim">
+            <div class="claim-inner">
+                <?php bloginfo('description'); ?>
             </div>
         </div>
-    </section>
-
-<?php get_footer(); ?>
+    </div>
+</section>

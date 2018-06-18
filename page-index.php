@@ -11,4 +11,6 @@
     </div>
 </section>
 
+<?php get_template_part( 'src/template-parts/page/content', 'index' ); ?>
+
 <?php get_footer(); ?>
