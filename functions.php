@@ -9,6 +9,15 @@ spl_autoload_register(function($name) {
 require_once 'src/functions.php';
 
 /**
+ * Add SVG mime type to upload core
+ */
+add_filter( 'upload_mimes', 'generate_svg' );
+function generate_svg( $svg_mime ) {
+    $svg_mime['svg'] = 'image/svg+xml';
+    return $svg_mime;
+}
+
+/**
  * Custom WordPress navigation
  */
 add_action( 'after_setup_theme', 'main_menu_setup' );
@@ -126,8 +135,7 @@ add_action( 'wp_enqueue_scripts', 'shoptet_theme_enqueue_scripts', 1 );
  * Load Shoptet footer
  */
 function get_shoptet_footer() {
-    // params
-    $id = 'shoptetcz';
+    $id = (get_theme_mod( 'footer_id_setting' )) ? get_theme_mod( 'footer_id_setting' ) : 'shoptetcz';
     $temp = 'wp-content/themes/shoptet-wp-theme/tmp/shoptet-footer.html';
 
     $url = 'https://www.shoptet.cz/action/ShoptetFooter/render/';
@@ -188,5 +196,37 @@ add_action( 'widgets_init', 'arphabet_widgets_init' );
 
 add_filter('show_admin_bar', '__return_false');
 add_theme_support( 'post-thumbnails' );
+
+/* Shoptet WP Theme Customizer  */
+function shp_wp_theme_custom_logo_setup() {
+    $defaults = array(
+        'height'      => 100,
+        'width'       => 400,
+        'flex-height' => true,
+        'flex-width'  => true,
+        'header-text' => array( 'site-title', 'site-description' ),
+    );
+    add_theme_support( 'custom-logo', $defaults );
+}
+add_action( 'after_setup_theme', 'shp_wp_theme_custom_logo_setup' );
+
+/* Shoptet WP General Settings Customizer  */
+add_action('customize_register', 'shp_wp_customizer');
+
+function shp_wp_customizer($wp_customize) {
+    $wp_customize->add_section('shp_wp_general_settings', array(
+        'title'          => 'Shoptet WP General Settings'
+    ));
+
+    $wp_customize->add_setting('footer_id_setting', array(
+        'default'        => 'shoptetcz',
+    ));
+
+    $wp_customize->add_control('footer_id_setting', array(
+        'label'   => 'Footer ID',
+        'section' => 'shp_wp_general_settings',
+        'type'    => 'text',
+    ));
+}
 
 ?>
