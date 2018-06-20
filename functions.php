@@ -18,6 +18,38 @@ function generate_svg( $svg_mime ) {
 }
 
 /**
+ * Custom WordPress breadcrumbs
+ */
+function shp_breadcrumb() {
+	echo '<div class="breadcrumbs">';
+
+    if (!is_home()) {
+		echo '<span><a href="' . get_option('home') . '"><i class="fas fa-home"></i></a></span>';
+
+		if (is_category() || is_single()) {
+			echo ' &raquo; <span>';
+			the_category(' </span> &raquo; <span> ');
+
+			if (is_single()) {
+				echo '</span> &raquo; <span>' . the_title() . '</span>';
+			}
+
+		} elseif (is_page()) {
+			echo ' &raquo; <span>' . the_title .'</span>';
+		}
+	}
+	elseif (is_tag()) { single_tag_title(); }
+	elseif (is_day()) { echo '<span>Archiv ' . the_time('F jS, Y') . '</span>'; }
+	elseif (is_month()) { echo '<span>Archiv ' . the_time('F, Y') . '</span>'; }
+	elseif (is_year()) { echo '<span>Archiv ' . the_time('Y') . '</span>'; }
+	elseif (is_author()) { echo '<span>Archiv autora</span>'; }
+	elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { echo '<span>Archiv blogu </span>'; }
+	elseif (is_search()) { echo '<span>Výsledky vyhledávání</span>'; }
+	echo '</div>';
+}
+add_filter( 'shp_breadcrumb', 'shp_breadcrumb' );
+
+/**
  * Custom WordPress navigation
  */
 add_action( 'after_setup_theme', 'main_menu_setup' );
@@ -127,6 +159,7 @@ function shoptet_theme_enqueue_scripts() {
     wp_enqueue_script('shp-jquery', $template_url . '/src/dist/js/build.js');
 
 	//Main Style
+	wp_enqueue_style('default-style', get_template_directory_uri() . '/style.css');
 	wp_enqueue_style('default', get_template_directory_uri() . '/src/dist/css/main.css');
 }
 add_action( 'wp_enqueue_scripts', 'shoptet_theme_enqueue_scripts', 1 );
@@ -135,6 +168,7 @@ add_action( 'wp_enqueue_scripts', 'shoptet_theme_enqueue_scripts', 1 );
  * Load Shoptet footer
  */
 function get_shoptet_footer() {
+    // params
     $id = (get_theme_mod( 'footer_id_setting' )) ? get_theme_mod( 'footer_id_setting' ) : 'shoptetcz';
     $temp = 'wp-content/themes/shoptet-wp-theme/tmp/shoptet-footer.html';
 
@@ -197,6 +231,17 @@ add_action( 'widgets_init', 'arphabet_widgets_init' );
 add_filter('show_admin_bar', '__return_false');
 add_theme_support( 'post-thumbnails' );
 
+
+/* Shoptet Comment form inputs reformat (comment textarea will be last instead of first ) */
+add_filter( 'comment_form_fields', 'move_comment_field' );
+function move_comment_field( $fields ) {
+    $comment_field = $fields['comment'];
+    unset( $fields['comment'] );
+    $fields['comment'] = $comment_field;
+    return $fields;
+}
+
+
 /* Shoptet WP Theme Customizer  */
 function shp_wp_theme_custom_logo_setup() {
     $defaults = array(
@@ -227,6 +272,68 @@ function shp_wp_customizer($wp_customize) {
         'section' => 'shp_wp_general_settings',
         'type'    => 'text',
     ));
+}
+
+/* Shoptet WP Category Image Term Meta  */
+/* can be improved by setting up media uploader, now works as a text field */
+add_action( 'init', 'shp_register_meta' );
+
+$shp_register_meta = array(
+    'type' => 'string',
+    'description' => 'Category Image',
+    'single' => true,
+    'show_in_rest' => true,
+);
+
+function shp_register_meta() {
+    register_meta( 'term', 'category_image', $shp_register_meta );
+}
+
+add_action( 'category_add_form_fields', 'shp_new_term_category_image_field' );
+function shp_new_term_category_image_field() {
+
+    wp_nonce_field( basename( __FILE__ ), 'shp_term_category_image_nonce' ); ?>
+
+    <div class="form-field shp_term-category-image-wrap">
+        <label for="shp_term-category-image"><?php _e( 'Obrázek kategorie', 'shp' ); ?></label>
+        <input type="text" name="shp_term_category_image" id="shp_term-category-image" value="" class="shp_category-image-field" data-default-category-image="http://localhost/blog/wp-content/uploads/2018/06/marketing.svg" />
+    </div>
+<?php }
+
+add_action( 'category_edit_form_fields', 'shp_edit_term_category_image_field' );
+function shp_edit_term_category_image_field( $term ) {
+
+    $default = 'http://localhost/blog/wp-content/uploads/2018/06/marketing.svg';
+    $category_image   = get_term_meta(  $term->term_id, 'category_image', true );
+
+    if ( ! $category_image )
+        $category_image = $default; ?>
+
+    <tr class="form-field shp_term-category-image-wrap">
+        <th scope="row"><label for="shp_term-category-image"><?php _e( 'Obrázek kategorie', 'shp' ); ?></label></th>
+        <td>
+            <?php wp_nonce_field( basename( __FILE__ ), 'shp_term_category_image_nonce' ); ?>
+            <input type="text" name="shp_term_category_image" id="shp_term-category-image" value="<?php echo esc_attr( $category_image ); ?>" class="shp_category-image-field" data-default-category-image="<?php echo esc_attr( $default ); ?>" />
+        </td>
+    </tr>
+<?php }
+
+
+add_action( 'edit_category',   'shp_save_term_category_image' );
+add_action( 'create_category', 'shp_save_term_category_image' );
+function shp_save_term_category_image( $term_id ) {
+
+    if ( ! isset( $_POST['shp_term_category_image_nonce'] ) || ! wp_verify_nonce( $_POST['shp_term_category_image_nonce'], basename( __FILE__ ) ) )
+        return;
+
+    $old_category_image = get_term_meta( $term_id, 'category_image', true );
+    $new_category_image = isset( $_POST['shp_term_category_image'] ) ? $_POST['shp_term_category_image'] : '';
+
+    if ( $old_category_image && '' === $new_category_image )
+        delete_term_meta( $term_id, 'category_image' );
+
+    else if ( $old_category_image !== $new_category_image )
+        update_term_meta( $term_id, 'category_image', $new_category_image );
 }
 
 ?>
