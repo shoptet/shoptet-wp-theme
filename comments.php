@@ -56,19 +56,19 @@
 	endif;
 
     /* https://codex.wordpress.org/Function_Reference/comment_form */
-    $sgp_commentform_args = array(
+    $shp_commentform_args = array(
         'fields' => array(
             'author' =>
                 '<div class="row"><div class="col-md-4"><p class="comment-form-author"><label for="author">' . __( 'Jméno', 'domainreference' ) .
                 ( $req ? ' <span class="required">*</span>' : '' ) . '</label>' .
                 '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
-                '" size="30"' . $aria_req . ' class="form-control"/></p></div>',
+                '" size="30" class="form-control"/></p></div>',
 
             'email' =>
                 '<div class="col-md-4"><p class="comment-form-email"><label for="email">' . __( 'Email', 'domainreference' ) .
                 ( $req ? ' <span class="required">*</span>' : '' ) . '</label>' .
                 '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
-                '" size="30"' . $aria_req . ' class="form-control"/></p></div>',
+                '" size="30" class="form-control"/></p></div>',
 
             'url' =>
                 '<div class="col-md-4"><p class="comment-form-url"><label for="url">' . __( 'Website', 'domainreference' ) . '</label>' .
@@ -85,7 +85,7 @@
         'class_submit'      => 'btn btn-secondary',
     );
 
-	comment_form($sgp_commentform_args);
+	comment_form($shp_commentform_args);
 
 	?>
 
