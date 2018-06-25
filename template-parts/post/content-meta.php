@@ -7,17 +7,12 @@
 
         $post_author = get_the_author();
         if ( $post_author ) {
-            echo '<div class="entry-author"><i class="fas fa-user"></i>' . get_the_author_link() . '</div>';
+            echo '<div class="entry-author"><i class="fas fa-user"></i>' . get_the_author_posts_link() . '</div>';
         }
 
-        $post_tags = get_the_tags();
-        if ( $post_tags ) {
-            echo '<div class="entry-tags"><i class="fas fa-tag"></i>';
-            foreach( $post_tags as $tag ) {
-                echo '<a href="' . $tag->link . '">' . $tag->name . '</a>';
-                if ($tag != end($post_tags)) { echo ' | '; }
-            }
-            echo '</div>';
+        $post_categories = get_the_category_list(' | ');
+        if ( $post_categories ) {
+            echo '<div class="entry-tags"><i class="fas fa-tag"></i>' . $post_categories . '</div>';
         }
 
         $post_comments = get_comments_number();

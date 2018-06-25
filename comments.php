@@ -6,7 +6,7 @@
 
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) : ?>
-        <div class="comments">
+        <div class="comments" id="comments" name="comments">
             <h3>
 
     			<?php
