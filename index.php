@@ -1,4 +1,11 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The main template file
+ *
+ * @package WordPress
+ */
+
+get_header(); ?>
 
 <section class="section section-claim">
     <div class="section-inner container">
@@ -9,3 +16,5 @@
         </div>
     </div>
 </section>
+
+<?php get_footer(); ?>
