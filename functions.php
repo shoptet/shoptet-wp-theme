@@ -161,6 +161,7 @@ function shoptet_theme_enqueue_scripts() {
     wp_enqueue_script('shp-jquery', $template_url . '/src/dist/js/build.js');
 
 	//Main Style
+	wp_enqueue_style('shoptet', get_template_directory_uri() . '/src/dist/css/shoptet.css');
 	wp_enqueue_style('default', get_template_directory_uri() . '/src/dist/css/main.css');
 }
 add_action( 'wp_enqueue_scripts', 'shoptet_theme_enqueue_scripts', 1 );
