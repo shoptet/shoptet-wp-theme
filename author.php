@@ -5,9 +5,9 @@
         <?php
             $author_has_custom_gravatar = validate_gravatar(get_the_author_meta('email'));
             if ( $author_has_custom_gravatar ) {
-                echo '<div class="row"><div class="category-image col-xs-12 col-sm-2 col-md-2 col-lg-2">';
+                echo '<div class="row"><div class="category-image col-xs-12 col-sm-2">';
                 echo get_avatar( get_the_author_meta( 'ID' ));
-                echo '</div><div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">';
+                echo '</div><div class="col-xs-12 col-sm-10">';
             }
         ?>
 
