@@ -33,11 +33,11 @@ function shp_breadcrumb() {
 			the_category(' </li><li class="breadcrumb-item"> ');
 
 			if (is_single()) {
-				echo '</li><li class="breadcrumb-item">' . the_title() . '</li>';
+				echo '</li><li class="breadcrumb-item">' . get_the_title() . '</li>';
 			}
 
 		} elseif (is_page()) {
-			echo '<li class="breadcrumb-item">' . the_title .'</li>';
+			echo '<li class="breadcrumb-item">' . get_the_title .'</li>';
 		}
 	}
 	elseif (is_tag()) { single_tag_title(); }
@@ -165,6 +165,25 @@ function shoptet_theme_enqueue_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'shoptet_theme_enqueue_scripts', 1 );
 
+/* Disable favicon uploader - Shoptet favicon will be the same everywhere */
+function remove_custom_favicon_option($wp_customize) {
+    $wp_customize->remove_control('site_icon');
+}
+add_action( 'customize_register', 'remove_custom_favicon_option', 20, 1 );
+
+/* Add Shoptet favicon */
+function shp_add_favicon(){ ?>
+    <!-- Custom Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/scaffolding/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri(); ?>/scaffolding/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri(); ?>/scaffolding/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/scaffolding/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="<?php echo get_template_directory_uri(); ?>/scaffolding/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+<?php }
+add_action('wp_head','shp_add_favicon');
+
 /**
  * Load Shoptet footer
  */
@@ -223,6 +242,7 @@ function arphabet_widgets_init() {
 }
 add_action( 'widgets_init', 'arphabet_widgets_init' );
 
+/* Custom Pagination for posts */
 function shp_wp_custom_pagination() {
     $template = '<h2 class="sr-only">%2$s</h2>'
         . '<nav class="%1$s" role="navigation">%3$s</nav>';
@@ -230,6 +250,17 @@ function shp_wp_custom_pagination() {
 }
 add_filter('navigation_markup_template', 'shp_wp_custom_pagination');
 
+/* Shoptet Post navigation buttons with button class */
+function post_link_attributes_prev($output) {
+    $code = 'class="btn btn-primary"';
+    return str_replace('<a href=', '<a '.$code.' href=', $output);
+}
+function post_link_attributes_next($output) {
+    $code = 'class="btn btn-primary"';
+    return str_replace('<a href=', '<a '.$code.' href=', $output);
+}
+add_filter('previous_post_link', 'post_link_attributes_prev');
+add_filter('next_post_link', 'post_link_attributes_next');
 
 /* Shoptet Comment form inputs reformat (comment textarea will be last instead of first ) */
 function move_comment_field( $fields ) {
@@ -239,7 +270,6 @@ function move_comment_field( $fields ) {
     return $fields;
 }
 add_filter( 'comment_form_fields', 'move_comment_field' );
-
 
 /* Shoptet WP Theme Customizer  */
 function shp_wp_theme_custom_logo_setup() {
@@ -331,4 +361,17 @@ function shp_save_term_category_image( $term_id ) {
 add_action( 'edit_category',   'shp_save_term_category_image' );
 add_action( 'create_category', 'shp_save_term_category_image' );
 
+/* Check whether gravatar is real or default image */
+function validate_gravatar($email) {
+    // Craft a potential url and test its headers
+    $hash = md5(strtolower(trim($email)));
+    $uri = 'http://www.gravatar.com/avatar/' . $hash . '?d=404';
+    $headers = @get_headers($uri);
+    if (!preg_match("|200|", $headers[0])) {
+        $has_valid_avatar = FALSE;
+    } else {
+        $has_valid_avatar = TRUE;
+    }
+    return $has_valid_avatar;
+}
 ?>

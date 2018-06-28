@@ -2,12 +2,7 @@
 
 <section class="section section-perex">
     <div class="section-inner container">
-        <?php get_template_part( 'template-parts/post/content', 'breadcrumb' ); ?>
-        <?php if ( have_posts() ) : ?>
-            <h1>Výsledky vyhledávání pro <strong><?php echo get_search_query(); ?></strong></h1>
-        <?php else : ?>
-            <h1>Žádné výsledky pro <strong><?php echo get_search_query(); ?></strong></h1>
-        <?php endif; ?>
+        <h1>Tag: <?php single_tag_title(); ?></h1>
     </div>
 </section>
 

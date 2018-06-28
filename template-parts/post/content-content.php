@@ -6,11 +6,8 @@
 
     the_content();
 
-    the_post_navigation (
-    array (
-        'prev_text' => '<span class="nav-previous">&laquo; %title</span>',
-        'next_text' => '<span class="nav-next">%title &raquo;</span>',
-        )
-    );
+    get_template_part( 'template-parts/post/content', 'tags' );
+
+    get_template_part( 'template-parts/post/content', 'navigation' );
 
 ?>
