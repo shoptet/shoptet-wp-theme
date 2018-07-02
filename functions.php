@@ -186,6 +186,15 @@ function shp_add_favicon(){ ?>
 add_action('wp_head','shp_add_favicon');
 
 /**
+ * Load Shoptet og:image to header
+ */
+function get_shoptet_og_image() {
+    $id = (get_theme_mod( 'footer_id_setting' )) ? get_theme_mod( 'footer_id_setting' ) : 'shoptetcz';
+    echo '<meta property="og:image" content="https://www.shoptet.cz/user/og_images/og_image_' . $id . '.png" />';
+}
+add_action( 'wp_head', 'get_shoptet_og_image' );
+
+/**
  * Load Shoptet footer
  */
 function get_shoptet_footer() {
