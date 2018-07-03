@@ -3,25 +3,17 @@
 <section class="section section-perex">
     <div class="section-inner container">
         <?php get_template_part( 'template-parts/post/content', 'breadcrumb' ); ?>
-
-        <?php
+        <div class="category-header">
+            <?php
             $current_category = get_queried_object();
             $category_image = get_term_meta( $current_category->term_id, 'category_image', true );
             if ( $category_image ) {
-                echo '<div class="row"><div class="category-image col-sm-2 col-md-2 col-lg-1"><img src="' . $category_image . '"/></div><div class="col-sm-10 col-md-10 col-lg-11">';
+                echo '<img src="' . $category_image . '" />';
             }
-        ?>
-
-        <h1><?php single_cat_title(); ?></h1>
-
+            ?>
+            <h1><?php single_cat_title(); ?></h1>
+        </div>
         <?php echo category_description(); ?>
-
-        <?php
-            if ( $category_image ) {
-                echo '</div></div><!-- !.row -->';
-            }
-        ?>
-
     </div>
 </section>
 
