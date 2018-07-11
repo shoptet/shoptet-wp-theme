@@ -67,7 +67,7 @@ if ( ! function_exists( 'main_menu_setup' ) ):
 
             function start_lvl( &$output, $depth = 0, $args = array() ) {
                 $indent = str_repeat( "\t", $depth );
-                $output	   .= "\n$indent<ul class=\"shp_navigation-submenu dropdown-menu\" aria-labelledby=\"categoriesDropdown\">\n";
+                $output	   .= "\n$indent<ul class=\"shp_navigation-submenu dropdown-menu dropdown-menu-right\" aria-labelledby=\"categoriesDropdown\">\n";
             }
 
             function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
@@ -81,6 +81,7 @@ if ( ! function_exists( 'main_menu_setup' ) ):
                 $class_names = $value = '';
 
                 $classes[] = ($item->current || $item->current_item_ancestor) ? 'active' : '';
+                $classes[] = ($args->has_children) ? 'has-dropdown' : '';
                 $classes[] = 'shp_menu-item';
 
 
@@ -93,12 +94,13 @@ if ( ! function_exists( 'main_menu_setup' ) ):
                 $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
                 $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
                 $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
-                $attributes .= ($args->has_children) 	    ? ' class="shp_menu-item-link dropdown-toggle" data-target="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"' : ' class="shp_menu-item-link"';
+                $attributes .= ' class="shp_menu-item-link"';
 
                 $item_output = $args->before;
                 $item_output .= '<a'. $attributes .'>';
                 $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-                $item_output .= ($args->has_children) ? ' <span class="caret"></span></a>' : '</a>';
+                $item_output .= '</a>';
+                $item_output .= ($args->has_children) ? '<span class="caret dropdown-toggle" data-target="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></span>' : '';
                 $item_output .= $args->after;
 
                 $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
