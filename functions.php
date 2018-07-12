@@ -233,7 +233,7 @@ add_filter( 'get_shoptet_footer', 'get_shoptet_footer' );
 /**
  * Register widgets
  */
-function arphabet_widgets_init() {
+function shp_widgets_init() {
     register_sidebar( array(
         'name'          => 'Contact form',
         'id'            => 'contact_form',
@@ -242,8 +242,20 @@ function arphabet_widgets_init() {
         'before_title'  => '<h2>',
         'after_title'   => '</h2>',
     ) );
+    register_sidebar( array(
+        'name'          => 'Page Bottom Widget',
+        'id'            => 'page_bottom_widget',
+        'before_widget' => '<div>',
+        'after_widget'  => '</div>',
+    ) );
+    register_sidebar( array(
+        'name'          => 'Post Bottom Widget',
+        'id'            => 'post_bottom_widget',
+        'before_widget' => '<div>',
+        'after_widget'  => '</div>',
+    ) );
 }
-add_action( 'widgets_init', 'arphabet_widgets_init' );
+add_action( 'widgets_init', 'shp_widgets_init' );
 
 /* Custom Pagination for posts */
 function shp_wp_custom_pagination() {

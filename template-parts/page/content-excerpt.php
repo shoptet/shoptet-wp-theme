@@ -17,7 +17,7 @@
         the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
     } ?>
 
-    <?php get_template_part( 'template-parts/post/content', 'meta' ); ?>
+    <?php get_template_part( 'template-parts/post/content', 'meta' ); ?> 
 
     <div class="entry-summary">
         <?php the_excerpt(); ?>
