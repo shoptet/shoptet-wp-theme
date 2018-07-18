@@ -32,8 +32,8 @@
 
     <div id="navigation">
         <div class="container">
-            <div id="shp_navigation_wrapper">
-               <?php wp_nav_menu( array('menu' => 'Main', 'menu_class' => '', 'menu_id' => 'shp_navigation', 'container'=> false, 'walker'=> new Shp_Walker_Nav_Menu)); ?> 
+            <div id="shp_navigation_wrapper" class="responsive-nav">
+               <?php wp_nav_menu( array('menu' => 'Main', 'menu_class' => 'visible-links', 'menu_id' => 'shp_navigation', 'container'=> false, 'walker'=> new Shp_Walker_Nav_Menu)); ?>
             </div>
         </div>
     </div>
