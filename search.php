@@ -2,31 +2,15 @@
 
 <section class="section section-perex">
     <div class="section-inner container">
-        <?php get_template_part( 'template-parts/post/content', 'breadcrumb' ); ?>
+        <?php get_template_part( 'template-parts/utils/content', 'breadcrumb' ); ?>
         <?php if ( have_posts() ) : ?>
-            <h1>Výsledky vyhledávání pro <strong><?php echo get_search_query(); ?></strong></h1>
+            <h1><?php _e( 'Výsledky vyhledávání pro', 'shp' ); ?> <strong><?php echo get_search_query(); ?></strong></h1>
         <?php else : ?>
-            <h1>Žádné výsledky pro <strong><?php echo get_search_query(); ?></strong></h1>
+            <h1><?php _e( 'Žádné výsledky pro', 'shp' ); ?> <strong><?php echo get_search_query(); ?></strong></h1>
         <?php endif; ?>
     </div>
 </section>
 
-<section class="section section-primary">
-    <div class="section-inner container">
-        <?php
-        if ( have_posts() ) :
-            while ( have_posts() ) : the_post();
-                get_template_part( 'template-parts/post/content', 'excerpt' );
-            endwhile;
-
-            get_template_part( 'template-parts/post/content', 'pagination' );
-
-        else : ?>
-            Žádné výsledky nenalezeny.
-        <?php
-        endif;
-        ?>
-    </div>
-</section>
+<?php get_template_part( 'template-parts/post/content', 'section-primary' ); ?>
 
 <?php get_footer(); ?>

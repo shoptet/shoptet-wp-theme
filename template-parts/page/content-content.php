@@ -1,6 +1,9 @@
-<section class="section section-primary">
-    <div class="section-inner container">
-        <?php the_content(); ?>
-        <?php get_template_part( 'template-parts/page/content', 'widget' ); ?>
-    </div>
-</section>
+<?php
+
+    echo '<h1>' . get_the_title() . '</h1>';
+
+    the_content();
+
+    get_template_part( 'template-parts/post/content', 'widget' );       
+
+?>
