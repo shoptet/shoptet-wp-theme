@@ -10,6 +10,6 @@
 
     get_template_part( 'template-parts/post/content', 'tags' );
 
-    get_template_part( 'template-parts/post/content', 'navigation' );
+    get_template_part( 'template-parts/utils/content', 'navigation' );
 
 ?>
