@@ -392,7 +392,7 @@ function validate_gravatar($email) {
 
 /*
 Shortcode for bootstrap alerts
-[shp_bootstrap_alert type="info" hasIcon="true" heading="Ea possunt paria non esse" dismissible="true"]Atqui iste locus est, Piso, tibi etiam atque etiam confirmandus, inquam[/shp_bootstrap_alert]
+[shp_bootstrap_alert type="info" icon="true" heading="Ea possunt paria non esse" dismissible="true"]Atqui iste locus est, Piso, tibi etiam atque etiam confirmandus, inquam[/shp_bootstrap_alert]
 */
 function shp_bootstrap_alert( $atts, $shortcode_content ) {
     $content = '';
@@ -412,22 +412,16 @@ function shp_bootstrap_alert( $atts, $shortcode_content ) {
         }
 
         if($atts['icon'] && $atts['icon'] == 'true') {
-            $content .= '<div class="row"><div class="col-sm-2 col-lg-1 text-center"><i class="alert-icon ' . $types[$atts['type']] . '"></i></div><div class="col-sm-10 col-lg-11">';
+            $content .= '<div class="row"><div class="col-2 col-lg-1 text-center"><i class="alert-icon ' . $types[$atts['type']] . '"></i></div><div class="col-10 col-lg-11">';
+        } else {
+            $content .= '<div class="row"><div class="col-12">';
         }
 
         if($atts['heading']) {
             $content .= '<h4 class="alert-heading">' . $atts['heading'] . '</h4>';
         }
 
-        $content .= $shortcode_content;
-
-        if($atts['icon'] && $atts['icon'] == 'true') {
-            $content .= $atts['content'] . '</div></div><!-- !.row -->';
-        } else {
-            $content .= $atts['content'];
-        }
-
-        $content .= '</div>';
+        $content .= $shortcode_content . '</div></div><!-- !.row --></div>';
     }
     return $content;
 }
@@ -473,5 +467,27 @@ function wp_showProjectsCount() {
     }
 }
 add_shortcode('projectCount', 'wp_showProjectsCount');
+
+
+/*
+Shortcode for call to action
+[shp_cta action="href/to/action" button="<strong>button text</strong><br/>and subtext"]<h2>Ea possunt paria non esse</h2>Ea possunt paria non esse[/shp_cta]
+*/
+function shp_cta( $atts, $shortcode_content ) {
+    $heading = empty($shortcode_content) ? '<h2>Založte si nezávazně vlastní testovací e-shop na Shoptetu</h2>' : $shortcode_content;
+    $action = isset($atts['action']) ? $atts['action'] : 'https://www.shoptet.cz/projectAction/ShoptetTrial/CreateTrialProject/';
+    $button = isset($atts['button']) ? $atts['button'] : '<strong>Vyzkoušejte si nás</strong> <br>30 dní zdarma a bez závazků';
+
+    $content .= '<div class="cta">' . $heading . '<form action="' . $action . '" method="post" name="cta-form">';
+
+    $content .= '<div><input type="hidden" name="formId" value="2"><span class="form-protection">Nevyplňujte toto pole:</span><input type="text" name="surname" class="form-protection"></div>';
+
+    $content .= '<div class="fieldset"><input type="text" name="email" placeholder="Vložte e-mail" required="required"><button type="submit">' . $button . '</button></div>';
+
+    $content .= '<div class="footer-privacy-policy">Vložením e-mailu souhlasíte s <a href="https://www.shoptet.cz/podminky-ochrany-osobnich-udaju/" target="_blank">podmínkami ochrany osobních údajů</a></div></form></div><!-- cta end -->';
+
+    return $content;
+}
+add_shortcode( 'shp_cta', 'shp_cta' );
 
 ?>
