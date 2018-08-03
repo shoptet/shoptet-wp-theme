@@ -476,7 +476,7 @@ Shortcode for call to action
 function shp_cta( $atts, $shortcode_content ) {
     $heading = empty($shortcode_content) ? '<h2>Založte si nezávazně vlastní testovací e-shop na Shoptetu</h2>' : $shortcode_content;
     $action = isset($atts['action']) ? $atts['action'] : 'https://www.shoptet.cz/projectAction/ShoptetTrial/CreateTrialProject/';
-    $button = isset($atts['button']) ? $atts['button'] : '<strong>Vyzkoušejte si nás</strong> <br>30 dní zdarma a bez závazků';
+    $button = isset($atts['button']) ? $atts['button'] : '<strong>VYZKOUŠET ZDARMA</strong>';
 
     $content .= '<div class="cta">' . $heading . '<form action="' . $action . '" method="post" name="cta-form">';
 
