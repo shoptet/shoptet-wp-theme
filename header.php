@@ -27,7 +27,7 @@
             <div class="search header-search">
                 <?php get_template_part( 'template-parts/search/content', 'search' ); ?>
             </div>
-            <?php if (!empty(CUSTOM_PART_OF_HEADER)) {
+            <?php if (defined('CUSTOM_PART_OF_HEADER')) {
                 get_template_part( 'src/template-parts/page/header', 'custom' );
             } ?>
         </div>
