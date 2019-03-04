@@ -4,6 +4,6 @@
 
     the_content();
 
-    get_template_part( 'template-parts/post/content', 'widget' );       
+    get_template_part( 'template-parts/page/content', 'widget' );
 
 ?>
