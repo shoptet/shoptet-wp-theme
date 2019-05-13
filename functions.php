@@ -452,9 +452,9 @@ function wp_getStats() {
    }
 
    return array(
-       'projectsCount' => 8060,
-       'transactionsCount' => 81476,
-       'sales' => 32020068
+       'projectsCount' => 17000,
+       'transactionsCount' => 172640,
+       'sales' => 68710720
    );
 }
 
@@ -463,7 +463,7 @@ function wp_showProjectsCount() {
     if(!empty($projectStats) && !empty($projectStats['projectsCount'])) {
         return $projectStats['projectsCount'];
     } else {
-        return '13700';
+        return '17000';
     }
 }
 add_shortcode('projectCount', 'wp_showProjectsCount');
