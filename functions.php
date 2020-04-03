@@ -80,6 +80,11 @@ if ( ! function_exists( 'main_menu_setup' ) ):
                 $li_attributes = '';
                 $class_names = $value = '';
 
+                if (!empty($item->classes)) {
+                    foreach ($item->classes as $class) {
+                        $classes[] = $class;
+                    }
+                }
                 $classes[] = ($item->current || $item->current_item_ancestor) ? 'active' : '';
                 $classes[] = ($args->has_children) ? 'has-dropdown' : '';
                 $classes[] = 'shp_menu-item';
