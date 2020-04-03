@@ -3,7 +3,7 @@
 <section class="section section-perex">
     <div class="section-inner container text-center">
         <h1>404</h1>
-        <p>Je nám líto, ale zadaná stránka nebyla nalezena. Zkontrolujte adresu nebo použijte vyhledávací formulář</p>
+        <p><?php _e('We are sorry, but the requested page was not found.', 'shoptet'); ?></p>
     </div>
 </section>
 

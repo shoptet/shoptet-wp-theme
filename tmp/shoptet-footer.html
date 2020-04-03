@@ -10,7 +10,7 @@
 #shp_footer a, #shp_footer ul li a { color: #14b1ef; text-decoration: none; display: inline; }
 #shp_footer a:hover, #shp_footer ul li a:hover { color: #0F9AD2; }
 #shp_footer p { margin: 5px 0; line-height: 20px; color: #1f1f1f; font-family: 'Source Sans Pro', sans-serif; font-size: 14px; font-weight: 400; text-align: left; color: #1f1f1f; }
-#shp_footer ul { list-style-type: none; list-style-image: url('https://cdn.myshoptet.com/tpl/f331b983/shoptet_responsive/master/templates/shoptet_responsive/img/li.png'); padding: 5px 0 0 15px; margin: 0; }
+#shp_footer ul { list-style-type: none; list-style-image: url('https://cdn.myshoptet.com/tpl/83a1b2b5/shoptet_responsive/master/templates/shoptet_responsive/img/li.png'); padding: 5px 0 0 15px; margin: 0; }
 #shp_footer ul li { padding: 0 0 5px; margin: 0; line-height: 18px; background: none; }
 #shp_footer .mr-15 { margin-right: 15px; }
 /* grid design */
@@ -45,6 +45,8 @@
 #shp_footer form#newsletter-form .fieldset { border: none; padding: 0; justify-content: flex-start; width: 100%; }
 #shp_footer form#newsletter-form input[type="text"] { background: #fff;  color: #1f1f1f; border: 1px solid #e7e7e7; min-width: 10%; }
 #shp_footer form#newsletter-form button[type="submit"] { background: #f7a12b; color: #fff; border: 1px solid #f7a12b; cursor: pointer; white-space: nowrap; margin: 0 0 0 5px; }
+/* terms */
+#shp_footer #shp_footer-terms { display: flex; flex-wrap: wrap; }
 /* copyright */
 #shp_footer #shp_footer-copyright { border-top: 1px solid #e7e7e7; padding: 10px 0 20px; color: #999999; font-weight: 300; font-size: 15px; }
 #shp_footer #shp_footer-copyright img { vertical-align: middle; }
@@ -81,8 +83,8 @@
 }
 @media (max-width: 767px) {
     #shp_footer h2 { padding: 0 0 20px; }
-    #shp_footer ul { display: flex; justify-content: space-between; flex-flow: row wrap; }
-    #shp_footer ul li { padding: 5px 15px 5px 0; }
+    #shp_footer ul { display: flex; flex-flow: row wrap; }
+    #shp_footer ul li { padding: 5px 25px 5px 0; }
     #shp_footer .shp_row { flex-flow: column wrap; margin-left: 0; margin-right: 0; }
     #shp_footer .shp_col { padding-left: 0; padding-right: 0; }
     #shp_footer #shp_footer-main .shp_col { padding-top: 15px; }
@@ -93,6 +95,9 @@
     #shp_footer form#shp_footer-try-us-form input[type="text"] { min-width: 200px; }
     #shp_footer-cookies { font-size: 10px; padding: 5px 0; }
     #shp_footer-cookies form button { font-size: 10px; }
+    #shp_footer form#newsletter-form .fieldset { flex-wrap: wrap; }
+    #shp_footer form#newsletter-form input[type="text"] { flex-basis: 100%; text-align: center; }
+    #shp_footer form#newsletter-form button[type="submit"] { flex-basis: 100%; margin: 5px 0 0; }
 }
 </style>
 <footer id="shp_footer">
@@ -108,7 +113,7 @@
                             <input type="text" name="surname" class="form-protection">
                         </div>
                          <div class="fieldset">
-                            <input type="text" name="email" placeholder="Vložte e-mail" required>
+                            <input type="text" name="email" placeholder="Vložte e-mail" id="shp_footer-try-us-form-email" required>
                             <button type="submit"><strong>Vyzkoušet zdarma</strong></button>
                         </div>
                         <div class="footer-privacy-policy">Vložením e-mailu souhlasíte s <a href="https://www.shoptet.cz/podminky-ochrany-osobnich-udaju/" target="_blank">podmínkami ochrany osobních údajů</a></div>
@@ -134,7 +139,7 @@
                                     </ul>
             </div>
             <div class="shp_col" id="shp_footer-recommended-links">
-                <h3>Doporučujeme</h3>
+                <h3>Skupina Shoptet</h3>
                 <ul>
                                             <li><a href="https://skolka.shoptet.cz/" target="_blank">Shoptet Školka</a></li>
                                             <li><a href="https://podpora.shoptet.cz/" target="_blank">Shoptet Podpora</a></li>
@@ -142,7 +147,6 @@
                                             <li><a href="https://doplnky.shoptet.cz/" target="_blank">Shoptet Doplňky</a></li>
                                             <li><a href="https://partneri.shoptet.cz/" target="_blank">Shoptet Partneři</a></li>
                                             <li><a href="https://blog.shoptet.cz/" target="_blank">Shoptet Blog</a></li>
-                                            <li><a href="https://kariera.shoptet.cz/" target="_blank">Shoptet Kariéra</a></li>
                                             <li><a href="https://www.mujprvnieshop.cz/" target="_blank">Můj první e-shop</a></li>
                                             <li><a href="https://www.youtube.com/playlist?list=PLVWymy7oK7490JlrI3htF8MKy7Zqrda2d" target="_blank">Shoptet.TV</a></li>
                                             <li><a href="https://www.mujshoptet.cz/" target="_blank">Můj Shoptet</a></li>
@@ -180,13 +184,13 @@
                     <meta itemprop="telephone" content="+420 604 600 444" />
                     <meta itemprop="email" content="info@shoptet.cz" />
                     <link itemprop="url" href="https://www.shoptet.cz/">
-                    <a itemprop="sameAs" href="https://www.facebook.com/shoptet/" target="_blank"><img src="https://cdn.myshoptet.com/tpl/f331b983/shoptet_responsive/master/templates/shoptet_responsive/img/ico-facebook.svg" alt=""></a>
-                    <a itemprop="sameAs" href="https://twitter.com/shoptet" target="_blank"><img src="https://cdn.myshoptet.com/tpl/f331b983/shoptet_responsive/master/templates/shoptet_responsive/img/ico-twitter.svg" alt=""></a>
-                    <a itemprop="sameAs" href="https://www.instagram.com/shoptet.cz/" target="_blank"><img src="https://cdn.myshoptet.com/tpl/f331b983/shoptet_responsive/master/templates/shoptet_responsive/img/ico-instagram.svg" alt=""></a>
-                    <a itemprop="sameAs" href="https://www.youtube.com/channel/UCrmFOFsJ7Nd3viUS_Kf5jsg" target="_blank"><img src="https://cdn.myshoptet.com/tpl/f331b983/shoptet_responsive/master/templates/shoptet_responsive/img/ico-youtube.svg" alt=""></a>
-                    <a itemprop="sameAs" href="https://cz.linkedin.com/company/shoptet" target="_blank"><img src="https://cdn.myshoptet.com/tpl/f331b983/shoptet_responsive/master/templates/shoptet_responsive/img/ico-linkedin.svg" alt=""></a>
+                    <a itemprop="sameAs" href="https://www.facebook.com/shoptet/" target="_blank"><img src="https://cdn.myshoptet.com/tpl/83a1b2b5/shoptet_responsive/master/templates/shoptet_responsive/img/ico-facebook.svg" alt=""></a>
+                    <a itemprop="sameAs" href="https://twitter.com/shoptet" target="_blank"><img src="https://cdn.myshoptet.com/tpl/83a1b2b5/shoptet_responsive/master/templates/shoptet_responsive/img/ico-twitter.svg" alt=""></a>
+                    <a itemprop="sameAs" href="https://www.instagram.com/shoptet.cz/" target="_blank"><img src="https://cdn.myshoptet.com/tpl/83a1b2b5/shoptet_responsive/master/templates/shoptet_responsive/img/ico-instagram.svg" alt=""></a>
+                    <a itemprop="sameAs" href="https://www.youtube.com/channel/UCrmFOFsJ7Nd3viUS_Kf5jsg" target="_blank"><img src="https://cdn.myshoptet.com/tpl/83a1b2b5/shoptet_responsive/master/templates/shoptet_responsive/img/ico-youtube.svg" alt=""></a>
+                    <a itemprop="sameAs" href="https://cz.linkedin.com/company/shoptet" target="_blank"><img src="https://cdn.myshoptet.com/tpl/83a1b2b5/shoptet_responsive/master/templates/shoptet_responsive/img/ico-linkedin.svg" alt=""></a>
                 </div>
-                <p>
+                <p id="shp_footer-terms">
                     <span class="mr-15"><a href="https://www.shoptet.cz/obchodni-podminky/" target="_blank">Obchodní podmínky</a></span>
                     <span><a href="https://www.shoptet.cz/podminky-ochrany-osobnich-udaju/" target="_blank">Ochrana osobních údajů</a></span>
                 </p>
@@ -198,132 +202,112 @@
         <div class="shp_container">
             <div class="shp_row">
                 <div class="shp_col hide-sm">&nbsp;</div>
-                <div class="shp_col text-center">s&nbsp;<img src="https://cdn.myshoptet.com/tpl/f331b983/shoptet_responsive/master/templates/shoptet_responsive/img/ico-hearth.png" width="17" height="14" alt="láskou">&nbsp;Shoptet</div>
-                <div class="shp_col text-right">2008–2018 &copy; Shoptet s.r.o. Všechna práva vyhrazena</div>
+                <div class="shp_col text-center">s&nbsp;<img src="https://cdn.myshoptet.com/tpl/83a1b2b5/shoptet_responsive/master/templates/shoptet_responsive/img/ico-hearth.png" width="17" height="14" alt="láskou">&nbsp;Shoptet</div>
+                <div class="shp_col text-right">2008–2020 &copy; Shoptet s.r.o. Všechna práva vyhrazena</div>
             </div>
         </div>
     </div>
-    <div id="shp_footer-cookies">
-        <div class="shp_container">
-            <form id="shp_footer-cookies-form" name="shp_footer-cookies-form"  onsubmit="event.preventDefault(); setCookiesConsent();">
-                <span>Tento web používá soubory cookie. Dalším procházením tohoto webu vyjadřujete souhlas s jejich používáním. <a href="https://www.shoptet.cz/podminky-ochrany-osobnich-udaju/#cookies" target="_blank">Více informací zde</a></span>
-                <button type="submit">Rozumím</button>
-            </form>
-        </div>
-    </div>
     <script type="text/javascript">
-    /* SET NEWSLETTER FORM REFERER */
-    document.getElementById('shp_newsletter-controllerReferer').value = [location.protocol, '//', location.host, location.pathname].join('');
-    /* !SET NEWSLETTER FORM REFERER */
 
-    /* DISPLAY NOTICE MESSAGE IF ANY */
-    var queryString = getRequests();
-    var requestTypes = new Array("notice", "warning", "error");
-    var notices = '';
-    for (var i = 0; i < requestTypes.length; i++) {
-        if(queryString[requestTypes[i]]) {
-            notices += '<div class="' + requestTypes[i] + '">' + queryString[requestTypes[i]] + '</div>';
-        }
-    }
-    if(notices != '') {
-        noticeHolder = document.createElement('div');
-        noticeHolder.setAttribute("id", "shp_footer-notice");
-        noticeHolder.innerHTML = notices;
-        document.body.appendChild(noticeHolder);
-
-        setTimeout(function() {
-            fadeOutAndRemove("shp_footer-notice");
-        }, 3000);
-
-        removeRequests(requestTypes);
-    }
-
-    function decodeUrlParameter(str) {
-        return decodeURIComponent((str+'').replace(/\+/g, '%20'));
-    }
-
-    function getRequests() {
-        var s1 = location.search.substring(1, location.search.length).split('&'),
-            r = {}, s2, i;
-        for (i = 0; i < s1.length; i += 1) {
-            s2 = s1[i].split('=');
-            r[decodeURIComponent(s2[0]).toLowerCase()] = decodeUrlParameter(s2[1]);
-        }
-        return r;
-    };
-
-    function removeRequests(requestTypes) {
-        var s1 = location.search.substring(1, location.search.length).split('&'),
-            r = {}, s2, i, pre;
-        for (i = 0; i < s1.length; i += 1) {
-            if(i > 0) { pre = '&'; } else { pre = ''; }
-            s2 = s1[i].split('=');
-            r[s2[0]] = pre + s1[i];
-        }
-        var locationSearchString = location.search;
-        for (i = 0; i < requestTypes.length; i++) {
-            locationSearchString = locationSearchString.replace(r[requestTypes[i]], "");
-        }
-        if (locationSearchString == '?') { locationSearchString = ''; }
-        var baseUrl = [location.protocol, '//', location.host, location.pathname].join('');
-        window.history.replaceState({}, "", baseUrl + locationSearchString);
-    };
-    /* !DISPLAY NOTICE MESSAGE IF ANY */
-
-    /* COOKIES */
-    var agreed = readShpCookie('shp_cookiesOK');
-    var cookiesForm = document.getElementById('shp_footer-cookies');
-
-    if (agreed == 'agreed') {
-        cookiesForm.parentNode.removeChild(cookiesForm);
-    } else {
-        cookiesForm.style.opacity = 0.8;
-    }
-
-    function createShpCookie(name,value,days) {
-        if (days) {
-            var date = new Date();
-            date.setTime(date.getTime()+(days*24*60*60*1000));
-            var expires = "; expires="+date.toGMTString();
-        }
-        else var expires = "";
-        document.cookie = name+"="+value+expires+"; path=/";
-    }
-
-    function readShpCookie(name) {
-        var nameEQ = name + "=";
-        var ca = document.cookie.split(';');
-        for(var i=0;i < ca.length;i++) {
-            var c = ca[i];
-            while (c.charAt(0)==' ') c = c.substring(1,c.length);
-            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-        }
-        return null;
-    }
-
-    function setCookiesConsent() {
-        createShpCookie('shp_cookiesOK','agreed',30);
-        fadeOutAndRemove("shp_footer-cookies");
-        return false;
-    }
-
-    function fadeOutAndRemove(elementID) {
-        var fadeTarget = document.getElementById(elementID);
-        var fadeEffect = setInterval(function () {
-            if (!fadeTarget.style.opacity) {
-                fadeTarget.style.opacity = 1;
+            /* SET TRY US FORM DATALAYER */
+            if (typeof dataLayer == 'undefined') {
+                dataLayer = [];
             }
-            if (fadeTarget.style.opacity < 0.1) {
-                clearInterval(fadeEffect);
-            } else {
-                fadeTarget.style.opacity -= 0.1;
+            document.querySelector("#shp_footer-try-us-form").addEventListener("submit", function(e){
+                e.preventDefault();
+                var email = document.getElementById("shp_footer-try-us-form-email").value;
+                if ((email.length > 0) && emailIsValid(email)){
+                    dataLayer.push({'event': 'vyzkousetZdarma'});
+                    this.submit();
+                } else {
+                    alert('E-mail nemá platný tvar. Platný tvar je např. email@shoptet.cz.');
+                    document.getElementById("shp_footer-try-us-form-email").focus();
+                    return false;
+                }
+            });
+
+            function emailIsValid(email) {
+                var emailRegEx = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return emailRegEx.test(email);
             }
-        }, 100);
-        setTimeout(function() {
-            var deleteTarget = document.getElementById(elementID);
-            deleteTarget.parentNode.removeChild(deleteTarget);
-        }, 2000);
-    }
-    /* !COOKIES */
+            /* !SET TRY US FORM DATALAYER */
+
+            /* SET NEWSLETTER FORM REFERER */
+            document.getElementById('shp_newsletter-controllerReferer').value = [location.protocol, '//', location.host, location.pathname].join('');
+            /* !SET NEWSLETTER FORM REFERER */
+
+            /* DISPLAY NOTICE MESSAGE IF ANY */
+            var queryString = getRequests();
+            var requestTypes = new Array("notice", "warning", "error");
+            var notices = '';
+            for (var i = 0; i < requestTypes.length; i++) {
+                if(queryString[requestTypes[i]]) {
+                    notices += '<div class="' + requestTypes[i] + '">' + queryString[requestTypes[i]] + '</div>';
+                }
+            }
+            if(notices != '') {
+                noticeHolder = document.createElement('div');
+                noticeHolder.setAttribute("id", "shp_footer-notice");
+                noticeHolder.innerHTML = notices;
+                document.body.appendChild(noticeHolder);
+
+                setTimeout(function() {
+                    fadeOutAndRemove("shp_footer-notice");
+                }, 3000);
+
+                removeRequests(requestTypes);
+            }
+
+            function decodeUrlParameter(str) {
+                return decodeURIComponent((str+'').replace(/\+/g, '%20'));
+            }
+
+            function getRequests() {
+                var s1 = location.search.substring(1, location.search.length).split('&'),
+                    r = {}, s2, i;
+                for (i = 0; i < s1.length; i += 1) {
+                    s2 = s1[i].split('=');
+                    r[decodeURIComponent(s2[0]).toLowerCase()] = decodeUrlParameter(s2[1]);
+                }
+                return r;
+            };
+
+            function removeRequests(requestTypes) {
+                var s1 = location.search.substring(1, location.search.length).split('&'),
+                    r = {}, s2, i, pre;
+                for (i = 0; i < s1.length; i += 1) {
+                    if(i > 0) { pre = '&'; } else { pre = ''; }
+                    s2 = s1[i].split('=');
+                    r[s2[0]] = pre + s1[i];
+                }
+                var locationSearchString = location.search;
+                for (i = 0; i < requestTypes.length; i++) {
+                    locationSearchString = locationSearchString.replace(r[requestTypes[i]], "");
+                }
+                if (locationSearchString == '?') { locationSearchString = ''; }
+                var baseUrl = [location.protocol, '//', location.host, location.pathname].join('');
+                window.history.replaceState({}, "", baseUrl + locationSearchString);
+            };
+            /* !DISPLAY NOTICE MESSAGE IF ANY */
+
+            function fadeOutAndRemove(elementID) {
+                var fadeTarget = document.getElementById(elementID);
+                var fadeEffect = setInterval(function () {
+                    if (!fadeTarget.style.opacity) {
+                        fadeTarget.style.opacity = 1;
+                    }
+                    if (fadeTarget.style.opacity < 0.1) {
+                        clearInterval(fadeEffect);
+                    } else {
+                        fadeTarget.style.opacity -= 0.1;
+                    }
+                }, 100);
+                setTimeout(function() {
+                    var deleteTarget = document.getElementById(elementID);
+                    deleteTarget.parentNode.removeChild(deleteTarget);
+                }, 2000);
+            }
+
+        
     </script>
 </footer>

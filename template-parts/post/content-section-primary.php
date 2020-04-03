@@ -9,8 +9,8 @@
             get_template_part( 'template-parts/utils/content', 'pagination' );
 
         else : ?>
-            <h2><?php _e( 'Je nám líto, ale požadovaná stránka nebyla nalezena.', 'shp' ); ?></h2>
-            <p><?php _e( 'Zkuste prosím použít vyhledávání', 'shp' ); ?></p>
+            <h2><?php _e( 'We are sorry, but requested page was not found', 'shoptet' ); ?></h2>
+            <p><?php _e( 'Try to use search, please', 'shoptet' ); ?></p>
 
             <?php get_template_part( 'template-parts/search/content', 'search' ); ?>
         <?php

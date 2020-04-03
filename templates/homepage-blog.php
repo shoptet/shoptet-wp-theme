@@ -19,9 +19,8 @@
 
             get_template_part( 'template-parts/utils/content', 'pagination' );
 
-        else : ?>
-            Žádné výsledky nenalezeny.
-        <?php
+        else:
+            e_('No results found', 'shoptet');
         endif;
         ?>
     </div>

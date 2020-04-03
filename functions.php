@@ -41,12 +41,12 @@ function shp_breadcrumb() {
 		}
 	}
 	elseif (is_tag()) { single_tag_title(); }
-	elseif (is_day()) { echo '<li class="breadcrumb-item active">Archiv ' . the_time('F jS, Y') . '</li>'; }
-	elseif (is_month()) { echo '<li class="breadcrumb-item active">Archiv ' . the_time('F, Y') . '</li>'; }
-	elseif (is_year()) { echo '<li class="breadcrumb-item active">Archiv ' . the_time('Y') . '</li>'; }
-	elseif (is_author()) { echo '<li class="breadcrumb-item active">Archiv autora</li>'; }
-	elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { echo '<li class="breadcrumb-item">Archiv blogu </li>'; }
-	elseif (is_search()) { echo '<li class="breadcrumb-item active">Výsledky vyhledávání</li>'; }
+	elseif (is_day()) { echo '<li class="breadcrumb-item active">' . _e('Archive', 'shoptet') . ' ' . the_time('F jS, Y') . '</li>'; }
+	elseif (is_month()) { echo '<li class="breadcrumb-item active">' . _e('Archive', 'shoptet') . ' ' . the_time('F, Y') . '</li>'; }
+	elseif (is_year()) { echo '<li class="breadcrumb-item active">' . _e('Archive', 'shoptet') . ' ' . the_time('Y') . '</li>'; }
+	elseif (is_author()) { echo '<li class="breadcrumb-item active">' . _e('Authors archive', 'shoptet') . '</li>'; }
+	elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { echo '<li class="breadcrumb-item">' . _e('Blog archive', 'shoptet') . '</li>'; }
+	elseif (is_search()) { echo '<li class="breadcrumb-item active">' . _e('Search results', 'shoptet') . '</li>'; }
 	echo '</ol>';
 }
 add_filter( 'shp_breadcrumb', 'shp_breadcrumb' );
@@ -335,7 +335,7 @@ function shp_new_term_category_image_field() {
     wp_nonce_field( basename( __FILE__ ), 'shp_term_category_image_nonce' ); ?>
 
     <div class="form-field shp_term-category-image-wrap">
-        <label for="shp_term-category-image"><?php _e( 'Obrázek kategorie', 'shp' ); ?></label>
+        <label for="shp_term-category-image"><?php _e( 'Image of category', 'shoptet' ); ?></label>
         <input type="text" name="shp_term_category_image" id="shp_term-category-image" value="" class="shp_category-image-field" data-default-category-image="http://localhost/blog/wp-content/uploads/2018/06/marketing.svg" />
     </div>
 <?php }
@@ -350,7 +350,7 @@ function shp_edit_term_category_image_field( $term ) {
         $category_image = $default; ?>
 
     <tr class="form-field shp_term-category-image-wrap">
-        <th scope="row"><label for="shp_term-category-image"><?php _e( 'Obrázek kategorie', 'shp' ); ?></label></th>
+        <th scope="row"><label for="shp_term-category-image"><?php _e( 'Image of category', 'shoptet' ); ?></label></th>
         <td>
             <?php wp_nonce_field( basename( __FILE__ ), 'shp_term_category_image_nonce' ); ?>
             <input type="text" name="shp_term_category_image" id="shp_term-category-image" value="<?php echo esc_attr( $category_image ); ?>" class="shp_category-image-field" data-default-category-image="<?php echo esc_attr( $default ); ?>" />
@@ -408,7 +408,7 @@ function shp_bootstrap_alert( $atts, $shortcode_content ) {
         $content .= '<div class="alert alert-' . $atts['type'] . ' ' . $dismissible . '" role="alert">';
 
         if($atts['dismissible'] && $atts['dismissible'] == 'true') {
-            $content .= '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+            $content .= '<button type="button" class="close" data-dismiss="alert" aria-label="' . _e('Close', 'shoptet') . '"><span aria-hidden="true">&times;</span></button>';
         }
 
         if($atts['icon'] && $atts['icon'] == 'true') {
@@ -452,9 +452,9 @@ function wp_getStats() {
    }
 
    return array(
-       'projectsCount' => 17000,
-       'transactionsCount' => 172640,
-       'sales' => 68710720
+       'projectsCount' => 20267,
+       'transactionsCount' => 199630,
+       'sales' => 76857550
    );
 }
 
@@ -463,7 +463,7 @@ function wp_showProjectsCount() {
     if(!empty($projectStats) && !empty($projectStats['projectsCount'])) {
         return $projectStats['projectsCount'];
     } else {
-        return '17000';
+        return '20267';
     }
 }
 add_shortcode('projectCount', 'wp_showProjectsCount');
@@ -474,9 +474,9 @@ Shortcode for call to action
 [shp_cta action="href/to/action" button="<strong>button text</strong><br/>and subtext"]<h2>Ea possunt paria non esse</h2>Ea possunt paria non esse[/shp_cta]
 */
 function shp_cta( $atts, $shortcode_content ) {
-    $heading = empty($shortcode_content) ? '<h2>Založte si nezávazně vlastní testovací e-shop na Shoptetu</h2>' : $shortcode_content;
+    $heading = empty($shortcode_content) ? '<h2>' . _e('Create your own test e-shop on Shoptet without obligation', 'shoptet') .'</h2>' : $shortcode_content;
     $action = isset($atts['action']) ? $atts['action'] : 'https://www.shoptet.cz/projectAction/ShoptetTrial/CreateTrialProject/';
-    $button = isset($atts['button']) ? $atts['button'] : '<strong>VYZKOUŠET ZDARMA</strong>';
+    $button = isset($atts['button']) ? $atts['button'] : '<strong>' . _e('TRY FOR FREE', 'shoptet') . '</strong>';
 
     $content .= '<div class="cta">' . $heading . '<form action="' . $action . '" method="post" name="cta-form">';
 
@@ -484,7 +484,7 @@ function shp_cta( $atts, $shortcode_content ) {
 
     $content .= '<div class="fieldset"><input type="text" name="email" placeholder="Vložte e-mail" required="required"><button type="submit">' . $button . '</button></div>';
 
-    $content .= '<div class="footer-privacy-policy">Vložením e-mailu souhlasíte s <a href="https://www.shoptet.cz/podminky-ochrany-osobnich-udaju/" target="_blank">podmínkami ochrany osobních údajů</a></div></form></div><!-- cta end -->';
+    $content .= '<div class="footer-privacy-policy">' . _e('<p>By submitting a e-mail you agree to the <a href="https://www.shoptet.cz/podminky-ochrany-osobnich-udaju/" target="_blank">privacy policy</a></p>', 'shoptet') . '</div></form></div><!-- cta end -->';
 
     return $content;
 }
