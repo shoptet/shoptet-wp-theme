@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html lang="<?php echo get_locale(); ?>">
   <head>
     <title><?php wp_title(); ?></title>
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
