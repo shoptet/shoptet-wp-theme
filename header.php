@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<?php echo get_locale(); ?>">
+<html lang="<?php echo substr(get_locale(), 0, 2); ?>">
   <head>
     <title><?php wp_title(); ?></title>
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
