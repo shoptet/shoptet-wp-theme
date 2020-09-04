@@ -18,10 +18,10 @@
     		<ol class="comment-list">
     			<?php
     				wp_list_comments( array(
-    					'avatar_size' => 100,
-    					'style'       => 'ol',
-    					'short_ping'  => true,
-    					'reply_text'  => _e('Reply', 'shoptet'),
+    				    'avatar_size' => 100,
+                        'style'       => 'ol',
+                        'short_ping'  => true,
+                        'reply_text'  => __('Reply', 'shoptet'),
     				) );
     			?>
     		</ol>
@@ -52,29 +52,29 @@
     $shp_commentform_args = array(
         'fields' => array(
             'author' =>
-                '<div class="row"><div class="col-md-4"><p class="comment-form-author"><label for="author">' . _e( 'Name', 'shoptet' ) .
+                '<div class="row"><div class="col-md-4"><p class="comment-form-author"><label for="author">' . __( 'Name', 'shoptet' ) .
                 ( $req ? ' <span class="required">*</span>' : '' ) . '</label>' .
                 '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
                 '" size="30" class="form-control"/></p></div>',
 
             'email' =>
-                '<div class="col-md-4"><p class="comment-form-email"><label for="email">' . _e( 'Email', 'shoptet' ) .
+                '<div class="col-md-4"><p class="comment-form-email"><label for="email">' . __( 'Email', 'shoptet' ) .
                 ( $req ? ' <span class="required">*</span>' : '' ) . '</label>' .
                 '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
                 '" size="30" class="form-control"/></p></div>',
 
             'url' =>
-                '<div class="col-md-4"><p class="comment-form-url"><label for="url">' . _e( 'Website', 'shoptet' ) . '</label>' .
+                '<div class="col-md-4"><p class="comment-form-url"><label for="url">' . __( 'Website', 'shoptet' ) . '</label>' .
                 '<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
                 '" size="30" class="form-control"/></p></div></div>',
             ),
             'comment_field' =>
-                '<p class="comment-form-comment"><label for="comment">' . _e( 'Comment', 'shoptet' ) .
+                '<p class="comment-form-comment"><label for="comment">' . __( 'Comment', 'shoptet' ) .
                 ( $req ? ' <span class="required">*</span>' : '' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" class="form-control">' .
                 '</textarea></p>',
 
-        'comment_notes_after' => _e('<p>By submitting a message you agree to the <a href="https://www.shoptet.cz/podminky-ochrany-osobnich-udaju/" target="_blank">privacy policy</a></p>', 'shoptet'),
-        'title_reply' => _e('Write comment', 'shoptet'),
+        'comment_notes_after' => __('<p>By submitting a message you agree to the <a href="https://www.shoptet.cz/podminky-ochrany-osobnich-udaju/" target="_blank">privacy policy</a></p>', 'shoptet'),
+        'title_reply' => __('Write comment', 'shoptet'),
         'class_submit'      => 'btn btn-secondary',
     );
 

@@ -413,7 +413,7 @@ function shp_bootstrap_alert( $atts, $shortcode_content ) {
         $content .= '<div class="alert alert-' . $atts['type'] . ' ' . $dismissible . '" role="alert">';
 
         if($atts['dismissible'] && $atts['dismissible'] == 'true') {
-            $content .= '<button type="button" class="close" data-dismiss="alert" aria-label="' . _e('Close', 'shoptet') . '"><span aria-hidden="true">&times;</span></button>';
+            $content .= '<button type="button" class="close" data-dismiss="alert" aria-label="' . __('Close', 'shoptet') . '"><span aria-hidden="true">&times;</span></button>';
         }
 
         if($atts['icon'] && $atts['icon'] == 'true') {
@@ -479,9 +479,9 @@ Shortcode for call to action
 [shp_cta action="href/to/action" button="<strong>button text</strong><br/>and subtext"]<h2>Ea possunt paria non esse</h2>Ea possunt paria non esse[/shp_cta]
 */
 function shp_cta( $atts, $shortcode_content ) {
-    $heading = empty($shortcode_content) ? '<h2>' . _e('Create your own test e-shop on Shoptet without obligation', 'shoptet') .'</h2>' : $shortcode_content;
+    $heading = empty($shortcode_content) ? '<h2>' . __('Create your own test e-shop on Shoptet without obligation', 'shoptet') .'</h2>' : $shortcode_content;
     $action = isset($atts['action']) ? $atts['action'] : 'https://www.shoptet.cz/projectAction/ShoptetTrial/CreateTrialProject/';
-    $button = isset($atts['button']) ? $atts['button'] : '<strong>' . _e('TRY FOR FREE', 'shoptet') . '</strong>';
+    $button = isset($atts['button']) ? $atts['button'] : '<strong>' . __('TRY FOR FREE', 'shoptet') . '</strong>';
 
     $content .= '<div class="cta">' . $heading . '<form action="' . $action . '" method="post" name="cta-form">';
 
@@ -489,7 +489,7 @@ function shp_cta( $atts, $shortcode_content ) {
 
     $content .= '<div class="fieldset"><input type="text" name="email" placeholder="Vložte e-mail" required="required"><button type="submit">' . $button . '</button></div>';
 
-    $content .= '<div class="footer-privacy-policy">' . _e('<p>By submitting a e-mail you agree to the <a href="https://www.shoptet.cz/podminky-ochrany-osobnich-udaju/" target="_blank">privacy policy</a></p>', 'shoptet') . '</div></form></div><!-- cta end -->';
+    $content .= '<div class="footer-privacy-policy">' . __('<p>By submitting a e-mail you agree to the <a href="https://www.shoptet.cz/podminky-ochrany-osobnich-udaju/" target="_blank">privacy policy</a></p>', 'shoptet') . '</div></form></div><!-- cta end -->';
 
     return $content;
 }
