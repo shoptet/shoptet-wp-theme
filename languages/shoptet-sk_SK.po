@@ -1,0 +1,163 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2020-04-01 11:00+0200\n"
+"PO-Revision-Date: 2020-04-02 14:56+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sk_SK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"X-Poedit-Basepath: ../../themes/shoptet-wp-theme\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
+"X-Poedit-KeywordsList: _e;_n\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: .git\n"
+"X-Poedit-SearchPathExcluded-1: .idea\n"
+"X-Poedit-SearchPathExcluded-2: scaffolding\n"
+"X-Poedit-SearchPathExcluded-3: tmp\n"
+
+#: 404.php:6
+msgid "We are sorry, but the requested page was not found."
+msgstr "Ospravedlňujeme sa, požadovaná stránka nebola nájdená."
+
+#: comments.php:13
+#, php-format
+msgid "%s comment"
+msgstr "%s komentár"
+
+#: comments.php:24
+msgid "Reply"
+msgstr "Odpovedať"
+
+#: comments.php:45
+msgid "It is not allowed to add another comments."
+msgstr "Nie je možné vkladať ďalšie komentáre."
+
+#: comments.php:55
+msgid "Name"
+msgstr "Meno"
+
+#: comments.php:61
+msgid "Email"
+msgstr "E-mail"
+
+#: comments.php:67
+msgid "Website"
+msgstr "Web"
+
+#: comments.php:72
+msgid "Comment"
+msgstr "Komentár"
+
+#: comments.php:76
+msgid ""
+"<p>By submitting a message you agree to the <a href=\"https://www.shoptet.cz/"
+"podminky-ochrany-osobnich-udaju/\" target=\"_blank\">privacy policy</a></p>"
+msgstr ""
+"<p>Odesláním zprávy souhlasíte s <a href=\"https://www.shoptet.cz/podminky-"
+"ochrany-osobnich-udaju/\" target=\"_blank\">podmínkami ochrany osobních "
+"údajů</a></p>"
+
+#: comments.php:77
+msgid "Write comment"
+msgstr "Napísať komentár"
+
+#: functions.php:44 functions.php:45 functions.php:46
+msgid "Archive"
+msgstr "Archív"
+
+#: functions.php:47
+msgid "Authors archive"
+msgstr "Archív autora"
+
+#: functions.php:48
+msgid "Blog archive"
+msgstr "Archív blogu"
+
+#: functions.php:49
+msgid "Search results"
+msgstr "Výsledky vyhľadávania"
+
+#: functions.php:338 functions.php:353
+msgid "Image of category"
+msgstr "Obrázok kategórie"
+
+#: functions.php:411
+msgid "Close"
+msgstr "Zavrieť"
+
+#: functions.php:477
+msgid "Create your own test e-shop on Shoptet without obligation"
+msgstr "Založte si vlastný e-shop na Shoptete bez záväzkov"
+
+#: functions.php:479
+msgid "TRY FOR FREE"
+msgstr "VYSKÚŠAM ZADARMO"
+
+#: functions.php:487
+msgid ""
+"<p>By submitting a e-mail you agree to the <a href=\"https://www.shoptet.cz/"
+"podminky-ochrany-osobnich-udaju/\" target=\"_blank\">privacy policy</a></p>"
+msgstr ""
+"<p>Odosláním e-mailu súhlasíte s <a href=\"https://www.shoptet.sk/podmienky-"
+"ochrany-osobnych-udajov/\" target=\"_blank\">podmienkami ochrany osobných "
+"údajov</a></p>"
+
+#: search.php:7
+msgid "Search results for"
+msgstr "Výsledky vyhľadávania pre"
+
+#: search.php:9
+msgid "No results for"
+msgstr "Žádne výsledky pre"
+
+#: src/archive-content.php:68
+msgid "Go to article"
+msgstr "Prejsť na článok"
+
+#: src/blog-content.php:42
+msgid "We are sorry, no results were found"
+msgstr "Ospravedlňujeme sa, žiadne výsledky neboli nájdené"
+
+#: src/blog-content.php:44 template-parts/post/content-section-primary.php:13
+msgid "Try to use search, please"
+msgstr "Skúste prosím vyhľadávanie"
+
+#: src/blog-content.php:82
+msgid "Go"
+msgstr "Prejsť"
+
+#: src/blog-content.php:101
+msgid "All news"
+msgstr "Všetky novinky"
+
+#: template-parts/post/content-excerpt.php:27
+msgid "Read all"
+msgstr "Čítať všetky"
+
+#: template-parts/post/content-section-primary.php:12
+msgid "We are sorry, but requested page was not found"
+msgstr "Ospravedlňujeme sa, ale požadovaná stránka nebola nájdená"
+
+#: template-parts/search/content-search.php:4
+msgid "Enter search term..."
+msgstr "Zadajte hľadaný výraz..."
+
+#: template-parts/search/content-search.php:6
+msgid "Search"
+msgstr "Hľadať"
+
+#: template-parts/utils/content-pagination.php:4
+msgid "Previous"
+msgstr "Predchádzajúci"
+
+#: template-parts/utils/content-pagination.php:5
+msgid "Next"
+msgstr "Ďalší"
+
+#: template-parts/utils/content-pagination.php:6
+msgid "Page"
+msgstr "Stránka"

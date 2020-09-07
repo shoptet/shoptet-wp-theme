@@ -11,6 +11,18 @@ require_once 'src/functions.php';
 add_theme_support( 'post-thumbnails' );
 
 /**
+ * Load translations
+ */
+function load_mo_file() {
+    $domain = 'shoptet';
+    $locale = apply_filters( 'theme_locale', determine_locale(), $domain );
+    $mofile = $domain . '-' . $locale . '.mo';
+    $path = get_template_directory() . '/languages/' . $mofile;
+    load_textdomain( $domain, $path );
+}
+add_action( 'after_setup_theme', 'load_mo_file' );
+
+/**
  * Add SVG mime type to upload core
  */
 function generate_svg( $svg_mime ) {
