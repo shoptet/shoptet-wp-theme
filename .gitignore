@@ -8,3 +8,5 @@
 .sass-cache/
 src/
 tmp/shoptet-footer.html
+/languages/*.mo
+/deployment*
