@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2020-04-01 11:00+0200\n"
-"PO-Revision-Date: 2020-06-16 19:53+0200\n"
+"PO-Revision-Date: 2020-04-02 14:56+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: cs_CZ\n"
+"Language: hu_HU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 2.3\n"
 "X-Poedit-Basepath: ../../themes/shoptet-wp-theme\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
 "X-Poedit-KeywordsList: _e;_n\n"
@@ -30,11 +30,11 @@ msgstr "%s megjegyzés"
 
 #: comments.php:24
 msgid "Reply"
-msgstr "Válaszol"
+msgstr "Válaszolni"
 
 #: comments.php:45
 msgid "It is not allowed to add another comments."
-msgstr "Nem szabad további megjegyzéseket tenni."
+msgstr "Nincs engedélyezve a további hozzászólások közzététele."
 
 #: comments.php:55
 msgid "Name"
@@ -57,8 +57,8 @@ msgid ""
 "<p>By submitting a message you agree to the <a href=\"https://www.shoptet.cz/"
 "podminky-ochrany-osobnich-udaju/\" target=\"_blank\">privacy policy</a></p>"
 msgstr ""
-"<p>Üzenet elküldésével elfogadja az <a href=\"https://www.shoptet.hu/uzleti-"
-"feltetelek/\" target=\"_blank\">adatvédelmi irányelveket</a></p>"
+"<p>Üzenet elküldésével elfogadja az <a href=\"https://www.shoptet.hu/"
+"adatvedelmi-iranyelveket/\" target=\"_blank\">adatvédelmi irányelveket</a></p>"
 
 #: comments.php:77
 msgid "Write comment"
@@ -90,19 +90,19 @@ msgstr "Bezár"
 
 #: functions.php:477
 msgid "Create your own test e-shop on Shoptet without obligation"
-msgstr "Készítsen saját teszt webáruház a Shoptet-en kötelezettség nélkül"
+msgstr "Készítsen saját teszt webáruházat a Shoptet-en - kötelezettség nélkül"
 
 #: functions.php:479
 msgid "TRY FOR FREE"
-msgstr "PRÓBÁLD KI INGYEN"
+msgstr "KIPRÓBÁLOM INGYEN"
 
 #: functions.php:487
 msgid ""
 "<p>By submitting a e-mail you agree to the <a href=\"https://www.shoptet.cz/"
 "podminky-ochrany-osobnich-udaju/\" target=\"_blank\">privacy policy</a></p>"
 msgstr ""
-"<p>E-mail küldésével elfogadja az <a href=\"https://www.shoptet.hu/uzleti-"
-"feltetelek/\" target=\"_blank\">adatvédelmi irányelveket</a></p>"
+"<p>E-mail küldésével elfogadja az <a href=\"https://www.shoptet.hu/"
+"adatvedelmi-iranyelveket/\" target=\"_blank\">adatvédelmi irányelveket</a></p>"
 
 #: search.php:7
 msgid "Search results for"
@@ -114,7 +114,7 @@ msgstr "Nincs eredmény erre"
 
 #: src/archive-content.php:68
 msgid "Go to article"
-msgstr "Lásd a cikket"
+msgstr "Cikk megtekintése"
 
 #: src/blog-content.php:42
 msgid "We are sorry, no results were found"
@@ -122,7 +122,7 @@ msgstr "Sajnos nem található eredmény"
 
 #: src/blog-content.php:44 template-parts/post/content-section-primary.php:13
 msgid "Try to use search, please"
-msgstr "Próbáljon meg használni a keresést"
+msgstr "Próbálja meg használni a keresést"
 
 #: src/blog-content.php:82
 msgid "Go"
@@ -130,11 +130,11 @@ msgstr "Megy"
 
 #: src/blog-content.php:101
 msgid "All news"
-msgstr "Minden hír"
+msgstr "Minden újdonság"
 
 #: template-parts/post/content-excerpt.php:27
 msgid "Read all"
-msgstr "Olvassa el az összes"
+msgstr "Olvassa el az egészet"
 
 #: template-parts/post/content-section-primary.php:12
 msgid "We are sorry, but requested page was not found"
@@ -146,7 +146,7 @@ msgstr "Adjon meg egy keresési kifejezést..."
 
 #: template-parts/search/content-search.php:6
 msgid "Search"
-msgstr "Keres"
+msgstr "Keresés"
 
 #: template-parts/utils/content-pagination.php:4
 msgid "Previous"
