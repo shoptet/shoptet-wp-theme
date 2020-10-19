@@ -16,7 +16,7 @@ class ShoptetUserRoles {
         if ( $current_version >= self::SHOPTET_ADMIN_ROLE_VERSION ) return;
         
         $role = get_role('shoptet_administrator');
-        if ( NULL !== $role ) {
+        if ( NULL === $role ) {
             $role = add_role( 'shoptet_administrator', __( 'Shoptet Administrator', 'shoptet' ), get_role('administrator')->capabilities );
         }
 
