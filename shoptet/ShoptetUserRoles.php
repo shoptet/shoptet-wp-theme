@@ -2,7 +2,7 @@
 
 class ShoptetUserRoles {
 
-    const SHOPTET_ADMIN_ROLE_VERSION = 1;
+    const SHOPTET_ADMIN_ROLE_VERSION = 3;
 
     static function init() {
         add_action( 'init', [ get_called_class(), 'add_shoptet_admin_role' ] );
