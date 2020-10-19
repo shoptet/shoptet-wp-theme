@@ -10,6 +10,8 @@ require_once 'src/functions.php';
 
 add_theme_support( 'post-thumbnails' );
 
+ShoptetUserRoles::init();
+
 /**
  * Load translations
  */
