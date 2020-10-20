@@ -204,6 +204,13 @@ function shp_add_favicon(){ ?>
 <?php }
 add_action('wp_head','shp_add_favicon');
 
+/* Redirect to Shoptet favicon.ico */
+function shp_favicon_redirect(){
+    wp_redirect( get_template_directory_uri() . "/scaffolding/img/favicon/favicon.ico" );
+    exit;
+}
+add_action( 'do_faviconico','shp_favicon_redirect');
+
 /**
  * Load Shoptet footer
  */
