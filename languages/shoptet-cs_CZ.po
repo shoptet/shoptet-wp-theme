@@ -1,23 +1,26 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-04-01 11:00+0200\n"
-"PO-Revision-Date: 2020-04-02 14:56+0200\n"
+"POT-Creation-Date: 2020-10-20 11:04+0200\n"
+"PO-Revision-Date: 2020-10-20 11:05+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: cs_CZ\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
-"X-Poedit-Basepath: ../../themes/shoptet-wp-theme\n"
+"X-Generator: Poedit 2.4.1\n"
+"X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
-"X-Poedit-KeywordsList: _e;_n\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: .git\n"
 "X-Poedit-SearchPathExcluded-1: .idea\n"
 "X-Poedit-SearchPathExcluded-2: scaffolding\n"
 "X-Poedit-SearchPathExcluded-3: tmp\n"
+"X-Poedit-SearchPathExcluded-4: src\n"
 
 #: 404.php:6
 msgid "We are sorry, but the requested page was not found."
@@ -26,7 +29,10 @@ msgstr "Omlouváme se, požadovaná stránka nebyla nalezena."
 #: comments.php:13
 #, php-format
 msgid "%s comment"
-msgstr "%s komentář"
+msgid_plural "%s comments"
+msgstr[0] "%s komentář"
+msgstr[1] "%s komentáře"
+msgstr[2] "%s komentářů"
 
 #: comments.php:24
 msgid "Reply"
@@ -65,39 +71,39 @@ msgstr ""
 msgid "Write comment"
 msgstr "Napsat komentář"
 
-#: functions.php:44 functions.php:45 functions.php:46
+#: functions.php:58 functions.php:59 functions.php:60
 msgid "Archive"
 msgstr "Archiv"
 
-#: functions.php:47
+#: functions.php:61
 msgid "Authors archive"
 msgstr "Archiv autora"
 
-#: functions.php:48
+#: functions.php:62
 msgid "Blog archive"
 msgstr "Archiv blogu"
 
-#: functions.php:49
+#: functions.php:63
 msgid "Search results"
 msgstr "Výsledky vyhledávání"
 
-#: functions.php:338 functions.php:353
+#: functions.php:357 functions.php:372
 msgid "Image of category"
 msgstr "Obrázek kategorie"
 
-#: functions.php:411
+#: functions.php:430
 msgid "Close"
 msgstr "Zavřít"
 
-#: functions.php:477
+#: functions.php:496
 msgid "Create your own test e-shop on Shoptet without obligation"
 msgstr "Založte si vlastní e-shop na Shoptetu bez závazků"
 
-#: functions.php:479
+#: functions.php:498
 msgid "TRY FOR FREE"
 msgstr "VYZKOUŠET ZDARMA"
 
-#: functions.php:487
+#: functions.php:506
 msgid ""
 "<p>By submitting a e-mail you agree to the <a href=\"https://www.shoptet.cz/"
 "podminky-ochrany-osobnich-udaju/\" target=\"_blank\">privacy policy</a></p>"
@@ -114,25 +120,9 @@ msgstr "Výsledky vyhledávání pro"
 msgid "No results for"
 msgstr "Žádné výsledky pro"
 
-#: src/archive-content.php:68
-msgid "Go to article"
-msgstr "Přejít na článek"
-
-#: src/blog-content.php:42
-msgid "We are sorry, no results were found"
-msgstr "Omlouváme se, žádné výsledky nebyly nalezeny"
-
-#: src/blog-content.php:44 template-parts/post/content-section-primary.php:13
-msgid "Try to use search, please"
-msgstr "Zkuste prosím vyhledávání"
-
-#: src/blog-content.php:82
-msgid "Go"
-msgstr "Přejít"
-
-#: src/blog-content.php:101
-msgid "All news"
-msgstr "Všechny novinky"
+#: shoptet/ShoptetUserRoles.php:20
+msgid "Shoptet Administrator"
+msgstr ""
 
 #: template-parts/post/content-excerpt.php:27
 msgid "Read all"
@@ -141,6 +131,10 @@ msgstr "Číst všechny"
 #: template-parts/post/content-section-primary.php:12
 msgid "We are sorry, but requested page was not found"
 msgstr "Omlouváme se, ale požadovaná stránka nebyla nalezena"
+
+#: template-parts/post/content-section-primary.php:13
+msgid "Try to use search, please"
+msgstr "Zkuste prosím vyhledávání"
 
 #: template-parts/search/content-search.php:4
 msgid "Enter search term..."
@@ -161,3 +155,15 @@ msgstr "Další"
 #: template-parts/utils/content-pagination.php:6
 msgid "Page"
 msgstr "Stránka"
+
+#~ msgid "Go to article"
+#~ msgstr "Přejít na článek"
+
+#~ msgid "We are sorry, no results were found"
+#~ msgstr "Omlouváme se, žádné výsledky nebyly nalezeny"
+
+#~ msgid "Go"
+#~ msgstr "Přejít"
+
+#~ msgid "All news"
+#~ msgstr "Všechny novinky"

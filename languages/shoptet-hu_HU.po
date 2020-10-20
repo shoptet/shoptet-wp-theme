@@ -1,32 +1,39 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-04-01 11:00+0200\n"
-"PO-Revision-Date: 2020-04-02 14:56+0200\n"
+"POT-Creation-Date: 2020-10-20 11:16+0200\n"
+"PO-Revision-Date: 2020-10-20 11:16+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: hu_HU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
-"X-Poedit-Basepath: ../../themes/shoptet-wp-theme\n"
+"X-Generator: Poedit 2.4.1\n"
+"X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
-"X-Poedit-KeywordsList: _e;_n\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: .git\n"
 "X-Poedit-SearchPathExcluded-1: .idea\n"
 "X-Poedit-SearchPathExcluded-2: scaffolding\n"
 "X-Poedit-SearchPathExcluded-3: tmp\n"
+"X-Poedit-SearchPathExcluded-4: src\n"
 
 #: 404.php:6
 msgid "We are sorry, but the requested page was not found."
 msgstr "Sajnáljuk, de a kért oldal nem található."
 
 #: comments.php:13
-#, php-format
+#, fuzzy, php-format
+#| msgid "%s comment"
 msgid "%s comment"
-msgstr "%s megjegyzés"
+msgid_plural "%s comments"
+msgstr[0] "%s megjegyzés"
+msgstr[1] "%s megjegyzés"
+msgstr[2] "%s megjegyzés"
 
 #: comments.php:24
 msgid "Reply"
@@ -58,51 +65,53 @@ msgid ""
 "podminky-ochrany-osobnich-udaju/\" target=\"_blank\">privacy policy</a></p>"
 msgstr ""
 "<p>Üzenet elküldésével elfogadja az <a href=\"https://www.shoptet.hu/"
-"adatvedelmi-iranyelveket/\" target=\"_blank\">adatvédelmi irányelveket</a></p>"
+"adatvedelmi-iranyelveket/\" target=\"_blank\">adatvédelmi irányelveket</a></"
+"p>"
 
 #: comments.php:77
 msgid "Write comment"
 msgstr "Írj megjegyzést"
 
-#: functions.php:44 functions.php:45 functions.php:46
+#: functions.php:58 functions.php:59 functions.php:60
 msgid "Archive"
 msgstr "Archívum"
 
-#: functions.php:47
+#: functions.php:61
 msgid "Authors archive"
 msgstr "A szerzők archívuma"
 
-#: functions.php:48
+#: functions.php:62
 msgid "Blog archive"
 msgstr "Blog archívum"
 
-#: functions.php:49
+#: functions.php:63
 msgid "Search results"
 msgstr "Keresési eredmények"
 
-#: functions.php:338 functions.php:353
+#: functions.php:357 functions.php:372
 msgid "Image of category"
 msgstr "A kategória képe"
 
-#: functions.php:411
+#: functions.php:430
 msgid "Close"
 msgstr "Bezár"
 
-#: functions.php:477
+#: functions.php:496
 msgid "Create your own test e-shop on Shoptet without obligation"
 msgstr "Készítsen saját teszt webáruházat a Shoptet-en - kötelezettség nélkül"
 
-#: functions.php:479
+#: functions.php:498
 msgid "TRY FOR FREE"
 msgstr "KIPRÓBÁLOM INGYEN"
 
-#: functions.php:487
+#: functions.php:506
 msgid ""
 "<p>By submitting a e-mail you agree to the <a href=\"https://www.shoptet.cz/"
 "podminky-ochrany-osobnich-udaju/\" target=\"_blank\">privacy policy</a></p>"
 msgstr ""
 "<p>E-mail küldésével elfogadja az <a href=\"https://www.shoptet.hu/"
-"adatvedelmi-iranyelveket/\" target=\"_blank\">adatvédelmi irányelveket</a></p>"
+"adatvedelmi-iranyelveket/\" target=\"_blank\">adatvédelmi irányelveket</a></"
+"p>"
 
 #: search.php:7
 msgid "Search results for"
@@ -112,25 +121,9 @@ msgstr "Keresési eredmények erre"
 msgid "No results for"
 msgstr "Nincs eredmény erre"
 
-#: src/archive-content.php:68
-msgid "Go to article"
-msgstr "Cikk megtekintése"
-
-#: src/blog-content.php:42
-msgid "We are sorry, no results were found"
-msgstr "Sajnos nem található eredmény"
-
-#: src/blog-content.php:44 template-parts/post/content-section-primary.php:13
-msgid "Try to use search, please"
-msgstr "Próbálja meg használni a keresést"
-
-#: src/blog-content.php:82
-msgid "Go"
-msgstr "Megy"
-
-#: src/blog-content.php:101
-msgid "All news"
-msgstr "Minden újdonság"
+#: shoptet/ShoptetUserRoles.php:20
+msgid "Shoptet Administrator"
+msgstr ""
 
 #: template-parts/post/content-excerpt.php:27
 msgid "Read all"
@@ -139,6 +132,10 @@ msgstr "Olvassa el az egészet"
 #: template-parts/post/content-section-primary.php:12
 msgid "We are sorry, but requested page was not found"
 msgstr "Sajnáljuk, de a kért oldal nem található"
+
+#: template-parts/post/content-section-primary.php:13
+msgid "Try to use search, please"
+msgstr "Próbálja meg használni a keresést"
 
 #: template-parts/search/content-search.php:4
 msgid "Enter search term..."
@@ -159,3 +156,15 @@ msgstr "Következő"
 #: template-parts/utils/content-pagination.php:6
 msgid "Page"
 msgstr "Oldal"
+
+#~ msgid "Go to article"
+#~ msgstr "Cikk megtekintése"
+
+#~ msgid "We are sorry, no results were found"
+#~ msgstr "Sajnos nem található eredmény"
+
+#~ msgid "Go"
+#~ msgstr "Megy"
+
+#~ msgid "All news"
+#~ msgstr "Minden újdonság"
