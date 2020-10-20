@@ -27,13 +27,12 @@ msgid "We are sorry, but the requested page was not found."
 msgstr "Ospravedlňujeme sa, požadovaná stránka nebola nájdená."
 
 #: comments.php:13
-#, fuzzy, php-format
-#| msgid "%s comment"
+#, php-format
 msgid "%s comment"
 msgid_plural "%s comments"
 msgstr[0] "%s komentár"
-msgstr[1] "%s komentár"
-msgstr[2] "%s komentár"
+msgstr[1] "%s komentáre"
+msgstr[2] "%s komentárov"
 
 #: comments.php:24
 msgid "Reply"
