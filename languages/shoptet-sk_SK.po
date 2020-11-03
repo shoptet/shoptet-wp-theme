@@ -63,9 +63,9 @@ msgid ""
 "<p>By submitting a message you agree to the <a href=\"https://www.shoptet.cz/"
 "podminky-ochrany-osobnich-udaju/\" target=\"_blank\">privacy policy</a></p>"
 msgstr ""
-"<p>Odesláním zprávy souhlasíte s <a href=\"https://www.shoptet.cz/podminky-"
-"ochrany-osobnich-udaju/\" target=\"_blank\">podmínkami ochrany osobních "
-"údajů</a></p>"
+"<p>Odoslaním správy súhlasíte s <a href=\"https://www.shoptet.sk/podmienky-"
+"ochrany-osobnych-udajov/\" target=\"_blank\">podmienkami ochrany osobných "
+"údajov</a></p>"
 
 #: comments.php:77
 msgid "Write comment"
@@ -126,7 +126,7 @@ msgstr ""
 
 #: template-parts/post/content-excerpt.php:27
 msgid "Read all"
-msgstr "Čítať všetky"
+msgstr "Čítať celé"
 
 #: template-parts/post/content-section-primary.php:12
 msgid "We are sorry, but requested page was not found"
