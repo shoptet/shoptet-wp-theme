@@ -258,6 +258,7 @@ add_filter( 'get_shoptet_footer', 'get_shoptet_footer' );
  * Register widgets
  */
 function shp_widgets_init() {
+    register_widget( 'ShoptetSocialWidget' );
     register_sidebar( array(
         'name'          => 'Contact form',
         'id'            => 'contact_form',
