@@ -31,12 +31,12 @@ class ShoptetSocialWidget extends WP_Widget {
     ?>
     <ul class="social-share">
       <li>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $encoded_url; ?>" title="<?php _e( 'Share on Facebook', 'shoptet' ); ?>" target="_blank">
+        <a class="social-share-link social-share-link-facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $encoded_url; ?>" title="<?php _e( 'Share on Facebook', 'shoptet' ); ?>" target="_blank">
           <i class="fab fa-facebook-f"></i>
         </a>
       </li>
       <li>
-        <a href="https://twitter.com/intent/tweet?text=<?php echo $encoded_url; ?>" title="<?php _e( 'Tweet on Twitter', 'shoptet' ); ?>" target="_blank">
+        <a class="social-share-link social-share-link-twitter" href="https://twitter.com/intent/tweet?text=<?php echo $encoded_url; ?>" title="<?php _e( 'Tweet on Twitter', 'shoptet' ); ?>" target="_blank">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
