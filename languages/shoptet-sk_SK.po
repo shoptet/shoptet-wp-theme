@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-10-20 11:16+0200\n"
-"PO-Revision-Date: 2020-10-20 11:16+0200\n"
+"POT-Creation-Date: 2020-11-05 13:49+0100\n"
+"PO-Revision-Date: 2020-11-05 13:49+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sk_SK\n"
@@ -87,23 +87,23 @@ msgstr "Archív blogu"
 msgid "Search results"
 msgstr "Výsledky vyhľadávania"
 
-#: functions.php:357 functions.php:372
+#: functions.php:365 functions.php:380
 msgid "Image of category"
 msgstr "Obrázok kategórie"
 
-#: functions.php:430
+#: functions.php:438
 msgid "Close"
 msgstr "Zavrieť"
 
-#: functions.php:496
+#: functions.php:504
 msgid "Create your own test e-shop on Shoptet without obligation"
 msgstr "Založte si vlastný e-shop na Shoptete bez záväzkov"
 
-#: functions.php:498
+#: functions.php:506
 msgid "TRY FOR FREE"
 msgstr "VYSKÚŠAM ZADARMO"
 
-#: functions.php:506
+#: functions.php:514
 msgid ""
 "<p>By submitting a e-mail you agree to the <a href=\"https://www.shoptet.cz/"
 "podminky-ochrany-osobnich-udaju/\" target=\"_blank\">privacy policy</a></p>"
@@ -119,6 +119,18 @@ msgstr "Výsledky vyhľadávania pre"
 #: search.php:9
 msgid "No results for"
 msgstr "Žádne výsledky pre"
+
+#: shoptet/ShoptetSocialWidget.php:34
+msgid "Share on Facebook"
+msgstr "Zdieľať na Facebooku"
+
+#: shoptet/ShoptetSocialWidget.php:39
+msgid "Tweet on Twitter"
+msgstr "Zdieľať na Twitteru"
+
+#: shoptet/ShoptetSocialWidget.php:63
+msgid "Title:"
+msgstr "Názov:"
 
 #: shoptet/ShoptetUserRoles.php:20
 msgid "Shoptet Administrator"
