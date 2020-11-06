@@ -501,13 +501,16 @@ Shortcode for call to action
 [shp_cta action="href/to/action" button="<strong>button text</strong><br/>and subtext"]<h2>Ea possunt paria non esse</h2>Ea possunt paria non esse[/shp_cta]
 */
 function shp_cta( $atts, $shortcode_content ) {
+    $locale = get_locale(); // cs_CZ, sk_SK, hu_HU
+    $language = substr($locale, 3, 2); // CZ, SK, HU
+    $language = mb_strtolower($language); // cz, sk, hu
     $heading = empty($shortcode_content) ? '<h2>' . __('Create your own test e-shop on Shoptet without obligation', 'shoptet') .'</h2>' : $shortcode_content;
-    $action = isset($atts['action']) ? $atts['action'] : 'https://www.shoptet.cz/projectAction/ShoptetTrial/CreateTrialProject/';
+    $action = isset($atts['action']) ? $atts['action'] : 'https://www.shoptet.' . $language . '/projectAction/ShoptetTrial/CreateTrialProject/';
     $button = isset($atts['button']) ? $atts['button'] : '<strong>' . __('TRY FOR FREE', 'shoptet') . '</strong>';
 
-    $content .= '<div class="cta">' . $heading . '<form action="' . $action . '" method="post" name="cta-form">';
+    $content = '<div class="cta">' . $heading . '<form action="' . $action . '" method="post" name="cta-form">';
 
-    $content .= '<div><input type="hidden" name="formId" value="2"><span class="form-protection">Nevyplňujte toto pole:</span><input type="text" name="surname" class="form-protection"></div>';
+    $content .= '<div><input type="hidden" name="formId" value="2"><input type="hidden" name="language" value="' . $language . '"><span class="form-protection">Nevyplňujte toto pole:</span><input type="text" name="surname" class="form-protection"></div>';
 
     $content .= '<div class="fieldset"><input type="text" name="email" placeholder="Vložte e-mail" required="required"><button type="submit">' . $button . '</button></div>';
 
