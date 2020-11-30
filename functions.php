@@ -14,6 +14,7 @@ require_once 'src/functions.php';
 add_theme_support( 'post-thumbnails' );
 
 Shoptet\ShoptetUserRoles::init();
+Shoptet\ShoptetSecurity::init();
 // Shoptet\ShoptetExternal::init();
 // Shoptet\ShoptetStats::init();
 
