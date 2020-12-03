@@ -15,8 +15,8 @@ add_theme_support( 'post-thumbnails' );
 
 Shoptet\ShoptetUserRoles::init();
 Shoptet\ShoptetSecurity::init();
-// Shoptet\ShoptetExternal::init();
-// Shoptet\ShoptetStats::init();
+Shoptet\ShoptetExternal::init();
+Shoptet\ShoptetStats::init();
 
 /**
  * Load translations
@@ -215,49 +215,6 @@ function shp_favicon_redirect(){
 add_action( 'do_faviconico','shp_favicon_redirect');
 
 /**
- * Load Shoptet footer
- */
-function get_shoptet_footer() {
-    // params
-    $id = (get_theme_mod( 'footer_id_setting' )) ? get_theme_mod( 'footer_id_setting' ) : 'shoptetcz';
-    $temp = 'wp-content/themes/shoptet-wp-theme/tmp/shoptet-footer.html';
-
-    $url = 'https://www.shoptet.cz/action/ShoptetFooter/render/';
-    $cache = 24 * 60 * 60;
-    $probability = 50;
-    $ignoreTemp = isset($_GET['force_footer']);
-
-    // code
-    $footer = '';
-    if (!$ignoreTemp && is_readable($temp)) {
-        $footer = file_get_contents($temp);
-        $regenerate = rand(1, $probability) === $probability;
-        if (!$regenerate) {
-            return $footer;
-        }
-        $mtine = filemtime($temp);
-        if ($mtine + $cache > time()) {
-            return $footer;
-        }
-    }
-
-    $address = $url . '?id=' . urlencode($id);
-    $new = file_get_contents($address);
-    if ($new !== FALSE) {
-        $newTemp = $temp . '.new';
-        $length = strlen($new);
-        $result = file_put_contents($newTemp, $new);
-        if ($result === $length) {
-            rename($newTemp, $temp);
-        }
-        $footer = $new;
-    }
-
-    return $footer;
-}
-add_filter( 'get_shoptet_footer', 'get_shoptet_footer' );
-
-/**
  * Register widgets
  */
 function shp_widgets_init() {
@@ -326,24 +283,6 @@ function shp_wp_theme_custom_logo_setup() {
     add_theme_support( 'custom-logo', $defaults );
 }
 add_action( 'after_setup_theme', 'shp_wp_theme_custom_logo_setup' );
-
-/* Shoptet WP General Settings Customizer  */
-function shp_wp_customizer($wp_customize) {
-    $wp_customize->add_section('shp_wp_general_settings', array(
-        'title'          => 'Shoptet WP General Settings'
-    ));
-
-    $wp_customize->add_setting('footer_id_setting', array(
-        'default'        => 'shoptetcz',
-    ));
-
-    $wp_customize->add_control('footer_id_setting', array(
-        'label'   => 'Footer ID',
-        'section' => 'shp_wp_general_settings',
-        'type'    => 'text',
-    ));
-}
-add_action('customize_register', 'shp_wp_customizer');
 
 /* Shoptet WP Category Image Term Meta  */
 /* can be improved by setting up media uploader, now works as a text field */
@@ -454,71 +393,3 @@ function shp_bootstrap_alert( $atts, $shortcode_content ) {
     return $content;
 }
 add_shortcode( 'shp_bootstrap_alert', 'shp_bootstrap_alert' );
-
-/*
-Shortcode for Shoptet project counts
-[projectsCount]
-*/
-function wp_getStats() {
-   $cacheFile = 'wp-content/uploads/counters.cached';
-   $modifyLimit = 3600; // hour in seconds
-
-
-   if (!file_exists($cacheFile) || (time() - filemtime($cacheFile) > $modifyLimit)) {
-       $tmp = @file_get_contents('https://www.shoptet.cz/projectAction/ShoptetStatisticCounts/Index');
-       if ($tmp !== FALSE) {
-           file_put_contents(
-               $cacheFile,
-               $tmp
-           );
-       }
-   }
-
-   $content = file_get_contents($cacheFile);
-   if ($content !== FALSE) {
-       return (array) json_decode($content);
-   }
-
-   return array(
-       'projectsCount' => 20267,
-       'transactionsCount' => 199630,
-       'sales' => 76857550
-   );
-}
-
-function wp_showProjectsCount() {
-    $projectStats = wp_getStats();
-    if(!empty($projectStats) && !empty($projectStats['projectsCount'])) {
-        return $projectStats['projectsCount'];
-    } else {
-        return '20267';
-    }
-}
-add_shortcode('projectCount', 'wp_showProjectsCount');
-
-
-/*
-Shortcode for call to action
-[shp_cta action="href/to/action" button="<strong>button text</strong><br/>and subtext"]<h2>Ea possunt paria non esse</h2>Ea possunt paria non esse[/shp_cta]
-*/
-function shp_cta( $atts, $shortcode_content ) {
-    $locale = get_locale(); // cs_CZ, sk_SK, hu_HU
-    $language = substr($locale, 3, 2); // CZ, SK, HU
-    $language = mb_strtolower($language); // cz, sk, hu
-    $heading = empty($shortcode_content) ? '<h2>' . __('Create your own test e-shop on Shoptet without obligation', 'shoptet') .'</h2>' : $shortcode_content;
-    $action = isset($atts['action']) ? $atts['action'] : 'https://www.shoptet.' . $language . '/projectAction/ShoptetTrial/CreateTrialProject/';
-    $button = isset($atts['button']) ? $atts['button'] : '<strong>' . __('TRY FOR FREE', 'shoptet') . '</strong>';
-
-    $content = '<div class="cta">' . $heading . '<form action="' . $action . '" method="post" name="cta-form">';
-
-    $content .= '<div><input type="hidden" name="formId" value="2"><input type="hidden" name="language" value="' . $language . '"><span class="form-protection">Nevyplňujte toto pole:</span><input type="text" name="surname" class="form-protection"></div>';
-
-    $content .= '<div class="fieldset"><input type="text" name="email" placeholder="Vložte e-mail" required="required"><button type="submit">' . $button . '</button></div>';
-
-    $content .= '<div class="footer-privacy-policy">' . __('<p>By submitting a e-mail you agree to the <a href="https://www.shoptet.cz/podminky-ochrany-osobnich-udaju/" target="_blank">privacy policy</a></p>', 'shoptet') . '</div></form></div><!-- cta end -->';
-
-    return $content;
-}
-add_shortcode( 'shp_cta', 'shp_cta' );
-
-?>
