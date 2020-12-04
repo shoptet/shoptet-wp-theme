@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "shoptet/shoptet-wp-common",
-            "version": "1.3.3",
+            "version": "1.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shoptet/shoptet-wp-common.git",
-                "reference": "2ca6489d001f4b582bede90a8c08930b91d9020e"
+                "reference": "08f4a2d2eefd13b03391fe46a55d511c4a8c841e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shoptet/shoptet-wp-common/zipball/2ca6489d001f4b582bede90a8c08930b91d9020e",
-                "reference": "2ca6489d001f4b582bede90a8c08930b91d9020e",
+                "url": "https://api.github.com/repos/shoptet/shoptet-wp-common/zipball/08f4a2d2eefd13b03391fe46a55d511c4a8c841e",
+                "reference": "08f4a2d2eefd13b03391fe46a55d511c4a8c841e",
                 "shasum": ""
             },
             "type": "library",
@@ -27,10 +27,10 @@
                 }
             },
             "support": {
-                "source": "https://github.com/shoptet/shoptet-wp-common/tree/1.3.3",
+                "source": "https://github.com/shoptet/shoptet-wp-common/tree/1.3.4",
                 "issues": "https://github.com/shoptet/shoptet-wp-common/issues"
             },
-            "time": "2020-12-01T13:51:33+00:00"
+            "time": "2020-12-04T12:47:08+00:00"
         }
     ],
     "packages-dev": [],
