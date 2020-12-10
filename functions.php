@@ -17,6 +17,7 @@ Shoptet\ShoptetUserRoles::init();
 Shoptet\ShoptetSecurity::init();
 Shoptet\ShoptetExternal::init();
 Shoptet\ShoptetStats::init();
+Shoptet\ShoptetPostCount::init();
 
 /**
  * Load translations
