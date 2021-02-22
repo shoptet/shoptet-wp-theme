@@ -138,7 +138,7 @@ msgstr ""
 
 #: template-parts/post/content-excerpt.php:27
 msgid "Read all"
-msgstr "Číst všechny"
+msgstr "Přečíst celé"
 
 #: template-parts/post/content-section-primary.php:12
 msgid "We are sorry, but requested page was not found"
