@@ -1,0 +1,21 @@
+.has-icon {
+    i {
+        font-size: 1rem;
+        &:first-child {
+            margin-right: .5ex;
+        }
+        &:last-child {
+            margin-left: .5ex;
+        }
+    }
+}
+
+a.has-icon {
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+        span {
+            text-decoration: underline;
+        }
+    }
+}

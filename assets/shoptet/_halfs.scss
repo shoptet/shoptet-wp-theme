@@ -1,0 +1,41 @@
+.halfs {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    @media (min-width: map-get($grid-breakpoints, 'lg')) {
+        &.indented {
+            padding-left: $grid-gutter-width * 2;
+        }
+    }
+}
+
+.half {
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 100%;
+    @media (min-width: map-get($grid-breakpoints, 'md')) {
+        width: 50%;
+        .aligned-right &:first-child {
+            order: 2;
+            padding-left: $grid-gutter-width / 2;
+        }
+        .aligned-right &:last-child {
+            order: 1;
+            padding-right: $grid-gutter-width / 2;
+        }
+        .aligned-left &:first-child {
+            order: 1;
+            padding-right: $grid-gutter-width / 2;
+        }
+        .aligned-left &:last-child {
+            order: 2;
+            padding-left: $grid-gutter-width / 2;
+        }
+    }
+    @media (max-width: map-get($grid-breakpoints, 'md') - 1) {
+        padding-top: $grid-gutter-width;
+        &:first-child {
+            padding-top: 0;
+        }
+    }
+}

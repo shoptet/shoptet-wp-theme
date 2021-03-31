@@ -1,0 +1,71 @@
+.header {
+    background-color: $header-bg;
+    border-bottom: 1px solid $border-color;
+}
+
+.header-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: $header-padding-y;
+    padding-bottom: $header-padding-y;
+    > div {
+        flex-grow: 1;
+        flex-shrink: 1;
+        width: auto;
+        &#shp_header {
+            flex-grow: 0;
+            min-width: 285px;
+            max-width: 350px;
+        }
+        &.header-search {
+            max-width: 350px;
+        }
+        &:last-child {
+            flex-grow: 0;
+            justify-self: flex-end;
+            text-align: right;
+        }
+    }
+    @media (max-width: map-get($grid-breakpoints, 'lg') - 1) {
+        padding-bottom: $header-padding-y - round($spacer / 2);
+        > div {
+            padding-bottom: round($spacer / 2);
+            text-align: center;
+            margin: auto;
+            width: 100%;
+            text-align: center;
+            &.header-search {
+                order: 3;
+            }
+            &:last-child {
+                text-align: center;
+            }
+        }
+    }
+}
+
+.shp_logo {
+    display: block;
+    svg {
+        max-width: 100%;
+        vertical-align: middle;
+    }
+    @media (min-width: map-get($grid-breakpoints, 'lg')) {
+        padding-right: round($grid-gutter-width / 2);
+    }
+}
+
+.header-login {
+    .btn-add {
+        margin-right: round($grid-gutter-width / 2);
+    }
+    @media (max-width: map-get($grid-breakpoints, 'sm') - 1) {
+        .btn-add {
+            display: block;
+            margin-right: 0;
+            margin-bottom: round($spacer / 2);
+        }
+    }
+}

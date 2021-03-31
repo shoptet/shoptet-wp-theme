@@ -18,7 +18,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: .git\n"
 "X-Poedit-SearchPathExcluded-1: .idea\n"
-"X-Poedit-SearchPathExcluded-2: scaffolding\n"
+"X-Poedit-SearchPathExcluded-2: assets\n"
 "X-Poedit-SearchPathExcluded-3: tmp\n"
 "X-Poedit-SearchPathExcluded-4: src\n"
 

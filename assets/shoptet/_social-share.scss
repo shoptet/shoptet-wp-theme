@@ -1,0 +1,37 @@
+.social-share {
+  padding-left: 0;
+  list-style: none;
+  
+  > li {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: .5rem;
+    }
+  }
+}
+
+.social-share-link {
+  display: inline-block;
+  width: $social-share-icon-size;
+  height: $social-share-icon-size;
+  font-size: 1.5rem;
+  line-height: $social-share-icon-size;
+  text-align: center;
+  color: $white;
+  background-color: $gray-500;
+  border-radius: 50%;
+
+  @include hover-focus {
+    color: $white;
+    opacity: .8;
+  }
+}
+
+.social-share-link-facebook {
+  background-color: $facebook-color;
+}
+
+.social-share-link-twitter {
+  background-color: $twitter-color;
+}

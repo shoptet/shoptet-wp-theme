@@ -1,0 +1,56 @@
+$navigation-item-padding-y: 0.5294rem;
+$navigation-item-padding-x: 0.875rem;
+$navigation-color: #000;
+$navigation-bg: #fff;
+
+$header-padding-y: 1.882rem;
+$header-bg: #fff;
+
+$gray: $gray-400;
+$gray-lighter: $gray-100;
+$gray-light: $gray-200;
+$gray-dark: $gray-600;
+$shoptet-blue: $primary;
+$shoptet-orange: #f6a12d;
+$shoptet-green: $secondary;
+
+$facebook-color: #4267B2;
+$twitter-color: #1DA1F2;
+
+$section-padding-y: $spacer;
+$section-claim-color: #fff;
+$section-claim-bg: $shoptet-blue;
+$section-primary-color: $body-color;
+$section-primary-bg: #fff;
+$section-secondary-color: $body-color;
+$section-secondary-bg: #f3f8fb;
+$section-perex-color: $body-color;
+$section-perex-bg: #e7f7fd;
+
+$claim-image-height: 239px;
+$claim-font-size-sm: 1.471rem;
+$claim-font-size: 1.875rem;
+
+$image-caption-width: 110px;
+
+$star-size: 8px;
+$star-big-size: 10px;
+$star-on-color: #f7a12b;
+$star-off-color: #bcbcbc;
+
+$overlay-bg: rgba(255,255,255,.85);
+
+$colorbox-bg: #fff;
+
+$loader-size: 50px;
+$loader-border-width: 3px;
+
+$sidebar-width: 360px;
+$main-content-width: calc(100% - #{$sidebar-width + $grid-gutter-width});
+
+$content-box-padding-y: $spacer;
+$content-box-padding-x: $grid-gutter-width;
+
+$article-padding: 15px 20px;
+
+$social-share-icon-size: 2.5rem;

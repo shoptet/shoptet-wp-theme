@@ -1,0 +1,64 @@
+// Wordpress microsite
+$fa-font-path: "./vendor/fa/webfonts";
+$claim-bg-image: url('../src/dist/img/claim.png');
+$colorbox-path: "../src/dist/img/colorbox/";
+// Marketplace/other non-wordpress microsite:
+//$fa-font-path: "../../dist/fonts";
+//$claim-bg-image: url('../../dist/img/claim.png');
+//$colorbox-path: "../../dist/img/colorbox/";
+
+@import "shoptet/variables-bootstrap";
+@import "vendor/bs/scss/functions";
+@import "vendor/bs/scss/variables";
+@import "shoptet/variables-shoptet";
+@import "vendor/bs/scss/mixins";
+@import "vendor/bs/scss/reboot";
+@import "vendor/bs/scss/utilities/screenreaders";
+@import "vendor/bs/scss/utilities/clearfix";
+@import "vendor/bs/scss/grid";
+@import "vendor/bs/scss/images";
+@import "vendor/bs/scss/type";
+@import "vendor/bs/scss/buttons";
+@import "vendor/bs/scss/forms";
+@import "vendor/bs/scss/custom-forms";
+@import "vendor/bs/scss/input-group";
+@import "vendor/bs/scss/pagination";
+@import "vendor/bs/scss/breadcrumb";
+@import "vendor/bs/scss/progress";
+@import "vendor/bs/scss/alert";
+@import "vendor/bs/scss/code";
+@import "vendor/bs/scss/card";
+@import "vendor/bs/scss/close";
+@import "vendor/bs/scss/tooltip";
+
+@import "vendor/bs/scss/utilities/background";
+@import "vendor/bs/scss/utilities/display";
+@import "vendor/bs/scss/utilities/flex";
+@import "vendor/bs/scss/utilities/spacing";
+
+@import "vendor/bs/scss/dropdown";
+
+@import 'vendor/fa/scss/variables';
+@import 'vendor/fa/scss/mixins';
+@import 'vendor/fa/scss/core';
+@import 'vendor/fa/scss/larger';
+@import 'vendor/fa/scss/fixed-width';
+@import 'vendor/fa/scss/solid';
+@import 'vendor/fa/scss/brands';
+
+@import "shoptet/icons";
+@import "shoptet/navigation";
+@import "shoptet/header";
+@import "shoptet/section";
+@import "shoptet/claim";
+@import "shoptet/halfs";
+@import "shoptet/stars";
+@import "shoptet/colorbox";
+@import "shoptet/overlay";
+@import "shoptet/loader";
+@import "shoptet/content-box";
+@import "shoptet/icon-links";
+@import "shoptet/tooltip";
+@import "shoptet/wp";
+@import "shoptet/common";
+@import "shoptet/social-share";

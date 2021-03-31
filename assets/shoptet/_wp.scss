@@ -1,0 +1,337 @@
+/*
+* This part is copied from Bootstrap and updated to WP pagination structure.
+* Unfortunately there is no way how to change pagination links elements.
+*/
+.page-numbers {
+    position: relative;
+    display: block;
+    padding: $pagination-padding-y $pagination-padding-x;
+    margin-left: -$pagination-border-width;
+    line-height: $pagination-line-height;
+    color: $pagination-color;
+    background-color: $pagination-bg;
+    border: $pagination-border-width solid $pagination-border-color;
+
+    &:hover {
+        z-index: 2;
+        color: $pagination-hover-color;
+        text-decoration: none;
+        background-color: $pagination-hover-bg;
+        border-color: $pagination-hover-border-color;
+    }
+
+    &:focus {
+        z-index: 2;
+        outline: $pagination-focus-outline;
+        box-shadow: $pagination-focus-box-shadow;
+    }
+
+    // Opinionated: add "hand" cursor to non-disabled .page-link elements
+    &:not(:disabled):not(.current) {
+        cursor: pointer;
+    }
+    &:first-child {
+        margin-left: 0;
+        @include border-left-radius($border-radius);
+    }
+    &:last-child {
+        @include border-right-radius($border-radius);
+    }
+
+    &.current {
+        z-index: 1;
+        color: $pagination-active-color;
+        background-color: $pagination-active-bg;
+        border-color: $pagination-active-border-color;
+    }
+
+    &.current {
+        color: $pagination-disabled-color;
+        pointer-events: none;
+        // Opinionated: remove the "hand" cursor set previously for .page-link
+        cursor: auto;
+        background-color: $pagination-disabled-bg;
+        border-color: $pagination-disabled-border-color;
+    }
+}
+
+.pagination {
+    justify-content: center;
+}
+
+/* Categories */
+.category-header {
+    margin-top: $headings-margin-bottom * 2;
+    @media (max-width: map-get($grid-breakpoints, 'sm') - 1) {
+        margin-top: $headings-margin-bottom;
+    }
+    .category-image {
+        img {
+            width: 100%;
+            max-width: 100%;
+            padding: 5px 0;
+        }
+        @media (max-width: map-get($grid-breakpoints, 'sm') - 1) {
+            display: none;
+        }
+    }
+}
+
+.entry-thumbnail img {
+    padding: 5px 0;
+}
+
+/* Articles */
+article {
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    padding: $article-padding;
+    margin: 0 0 $spacer;
+    @include clearfix;
+    .entry-thumbnail img {
+        padding: 5px 0;
+    }
+    .entry-more {
+        float: right;
+    }
+    .section-inner.container & .row {
+        max-width: unset;
+    }
+}
+
+.entry-meta {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    > div {
+        margin-right: 15px;    
+        i {
+            margin-right: 5px;
+        }
+    }
+}
+
+/* Post navigation buttons */
+.post-navigation {
+    > div {
+        + div {
+            padding-top: $spacer / 2;
+        }
+    }
+    .btn {
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    @media (min-width: map-get($grid-breakpoints, 'md')) {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        > div {
+            width: 50%;
+            &.nav-previous {
+                padding-right: 15px;
+                text-align: right;
+            }
+            &.nav-next {
+                padding-left: 15px;
+            }
+            + div {
+                padding-top: 0;
+            }
+            &:only-child {
+                text-align: center;
+                padding: 0;
+            }
+        }
+        .btn {
+            display: inline-block;
+            width: auto;
+            max-width: 100%;
+        }
+    }
+}
+
+/* Comments list */
+.comments {
+    margin: 20px 0;
+}
+
+.comment-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 2rem;
+    li {
+        border-top: 1px solid #e9e9e9;
+        margin-top: 15px;
+        padding-top: 15px;
+    }
+    ol {
+        list-style-type: none;
+        margin-left: 2rem;
+        @media (max-width: map-get($grid-breakpoints, 'sm') - 1) {
+            margin-left: 1rem;
+        }
+    }
+    .comment-author {
+        img {
+            float: left;
+            padding-right: 20px;
+        }
+        .says {
+            display: none;
+        }
+    }
+}
+
+/* Comments form */
+.comment-respond {
+    margin-top: 20px;
+}
+
+.comment-form label:not([for="wp-comment-cookies-consent"]) {
+    display: block;
+}
+
+.custom-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* Helpers */
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.align-self-center {
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    font-size: 0.8125rem;
+}
+
+/* Alert */
+.alert {
+    display: flex;
+    &,
+    &.alert-dismissible {
+        padding: .75rem 1.25rem;
+    }
+    .row {
+        width: 100%;
+        width: -moz-available;
+        width: -webkit-fill-available;
+        width: fill-available;
+        flex-wrap: nowrap;
+    }
+    .alert-icon {
+        font-size: 200%;
+        min-width: 30px;
+        @media (min-width: map-get($grid-breakpoints, 'sm')) {
+            font-size: 250%;
+            min-width: 40px;
+        }
+        @media (min-width: map-get($grid-breakpoints, 'lg')) {
+            font-size: 300%;
+            min-width: 50px;
+        }
+    }
+}
+
+/* CTA shortcode */
+.cta {
+    padding: $spacer;
+    margin: $spacer 0;
+    background: $gray-lighter;
+    text-align: center;
+    border-radius: 10px;
+    form {
+        .form-protection {
+            display: none;
+        }
+        .fieldset {
+            margin: 0 auto;
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #e7e7e7;
+            border-radius: 5px;
+            justify-content: center;
+            width: -moz-fit-content;
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            align-content: center;
+            flex-wrap: nowrap;
+            min-width: 0;
+        }
+        input[type="text"] {
+            background: #fff;
+            color: #1f1f1f;
+            border: 1px solid transparent;
+            min-width: 400px;
+            font-size: 16px;
+            height: 50px;
+            line-height: 20px;
+            font-weight: 400;
+            padding: 0 10px;
+            outline: none;
+            margin: 0;
+            box-shadow: none;
+            text-transform: none;
+            width: auto;
+        }
+        button[type="submit"] {
+            background: #f7a12b;
+            color: #fff;
+            border: 1px solid #f7a12b;
+            cursor: pointer;
+            white-space: nowrap;
+            margin: 0;
+            text-transform: uppercase;
+            margin: 0 0 0 5px;
+            font-size: 12px;
+            line-height: 16px;
+            height: 50px;
+            font-weight: 400;
+            border-radius: 5px !important;
+            padding: 0 10px;
+            outline: none;
+            strong {
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+/* WP editor styles */
+.alignright {
+    float: right;
+    margin: 0 0 1em 1em;
+}
+.alignleft {
+    float: left;
+    margin: 0 1em 1em 0;
+}
+.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.clearfix {
+    clear: both;
+    display: block;
+    content: "";
+}
+.anchor {
+    clear: both;
+    display: block;
+    position: relative;
+    top: -60px;
+}

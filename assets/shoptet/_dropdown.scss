@@ -1,0 +1,29 @@
+.shp_navigation-submenu-wide {
+    > .shp_navigation-submenu {
+        width: 240px;
+        left: 50% !important;
+        @media (min-width: map-get($grid-breakpoints, 'sm')) {
+            width: 480px;
+            flex-wrap: wrap;
+        }
+        @media (min-width: map-get($grid-breakpoints, 'lg')) {
+            width: 800px;
+        }
+    }
+    &.show {
+        > .shp_navigation-submenu {
+            @media (min-width: map-get($grid-breakpoints, 'sm')) {
+                display: flex;
+                > .shp_menu-item {
+                    width: 50%;
+                    white-space: normal;
+                }
+            }
+            @media (min-width: map-get($grid-breakpoints, 'lg')) {
+                > .shp_menu-item {
+                    width: 33.333333%;
+                }
+            }
+        }
+    }
+}
