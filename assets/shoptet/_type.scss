@@ -1,0 +1,58 @@
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 { 
+  color: $headings-color;
+}
+
+h1, .h1 {
+  font-weight: 700;
+}
+
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-weight: 600;
+}
+
+.heading {
+  font-size: 3rem;
+  
+  @include media-breakpoint-up(sm) {
+    font-size: 4rem;
+  }
+}
+
+.lead {
+  @include media-breakpoint-down(sm) {
+    font-size: $lead-font-size-sm;
+  }
+}
+
+.display-1 {
+  @include media-breakpoint-down(sm) {
+    font-size: $display1-size-sm;
+  }
+}
+
+.display-2 {
+  @include media-breakpoint-down(sm) {
+    font-size: $display2-size-sm;
+  }
+}
+
+.display-3 {
+  @include media-breakpoint-down(sm) {
+    font-size: $display3-size-sm;
+  }
+}
+
+.display-4 {
+  @include media-breakpoint-down(md) {
+    font-size: $display4-size-sm;
+  }
+}

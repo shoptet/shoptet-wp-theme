@@ -26,6 +26,22 @@ add_action( 'after_setup_theme', function () {
     load_theme_textdomain( 'shoptet', get_template_directory() . '/languages' );
 } );
 
+add_action( 'wp_enqueue_scripts', function() {
+    wp_enqueue_style( 'main', 'https://fonts.googleapis.com/css?family=Libre+Franklin:300,400,600,700&subset=latin-ext' );
+} );
+
+/**
+ * Change single file path for custom post types
+ */
+add_filter('single_template', function ($single_template) {
+    $custom_post_types = apply_filters('shp/custom_post_types', []);
+    $object = get_queried_object();
+    if (in_array($object->post_type, $custom_post_types)) {
+        $single_template = get_template_directory() . '/src/single-' . $object->post_type . '.php';
+    }
+    return $single_template;
+});
+  
 /**
  * Add SVG mime type to upload core
  */

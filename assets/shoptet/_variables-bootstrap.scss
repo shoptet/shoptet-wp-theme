@@ -1,13 +1,53 @@
 $spacer: 2rem;
+$font-size-base:              1rem;
+
+
+$gray-200: #ededed;
+$gray-300: #e5e5e5;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:    #000;
+
+$body-bg: #F4F4F4;
 
 $input-btn-padding-y: .5625rem;
 $input-btn-padding-y-sm: .375rem;
 $input-btn-padding-y-lg: 1rem;
 $input-btn-line-height: 1;
 $btn-font-weight: 400;
+$input-border-radius: 50px;
 
-$body-bg: #e7f7fd;
-$body-color: #212529;
+$btn-border-radius: 50px;
+$btn-padding-y: .8rem;
+$btn-padding-x: 2.5rem;
+
+$btn-border-radius-lg: 50px;
+$btn-padding-y-lg: .8rem;
+$btn-padding-x-lg: 3rem;
+
+$display1-size:               6rem;
+$display2-size:               3rem;
+$display3-size:               2.5rem;
+$display4-size:               2rem;
+
+$display1-size-sm:               4rem;
+$display2-size-sm:               2.5rem;
+$display3-size-sm:               2rem;
+$display4-size-sm:               1.5rem;
+
+$display1-weight:             600;
+$display2-weight:             600;
+$display3-weight:             600;
+$display4-weight:             600;
+
+$lead-font-size:              ($font-size-base * 1.7);
+$lead-font-size-sm:              ($font-size-base * 1.4);
+
+$body-color:     $gray-700;
 $border-color: #d9d9d9;
 $input-border-color: $border-color;
 $input-placeholder-color: #adb5bd;
@@ -32,7 +72,7 @@ $font-family-sans-serif: 'Source Sans Pro', sans-serif;
 $headings-margin-bottom: $spacer / 2;
 $headings-font-family: 'Libre Franklin', sans-serif;
 $headings-font-weight: 300;
-$headings-color: inherit;
+$headings-color: $gray-900;
 
 $h1-font-size: 2.588rem;
 $h2-font-size: 1.941rem;
@@ -40,9 +80,6 @@ $h3-font-size: 1.471rem;
 $h4-font-size: 1.218rem;
 $h5-font-size: 1.118rem;
 $h6-font-size: 1rem;
-
-$input-padding-y: 0.375rem;
-$input-btn-padding-y-lg: 1.5rem !default;
 
 $custom-select-indicator: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 3'%3E%3Cpath fill='%2314b1ef' d='M2 3L0 0h4z'/%3E%3C/svg%3E");
 

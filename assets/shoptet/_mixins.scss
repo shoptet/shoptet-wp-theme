@@ -1,0 +1,14 @@
+@mixin display-img() {
+  position: relative;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: auto;
+    width: 100%;
+    max-width: none;
+    transform: translate(-50%,-50%);
+  }
+}

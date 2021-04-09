@@ -1,0 +1,8 @@
+.block {
+  padding: 1rem;
+  border-radius: 15px;
+
+  @include media-breakpoint-up(md) {
+    padding: 3rem 5rem;
+  }
+}

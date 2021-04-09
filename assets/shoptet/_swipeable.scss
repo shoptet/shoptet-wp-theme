@@ -1,0 +1,38 @@
+.swipeable {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  justify-content: flex-start !important;
+  user-select: none;
+
+  &::after, &::before {
+    content: '';
+    display: block;
+    min-width: ($grid-gutter-width / 2);
+
+    @each $breakpoint, $container-max-width in $container-max-widths {
+      @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+        min-width: calc(50vw - (#{$container-max-width} / 2) + (#{$grid-gutter-width} / 2));
+      }
+    }
+  }
+
+  &.active {
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+  }
+}
+
+.swipeable-item {
+  min-width: 80%;
+
+  @each $breakpoint, $container-max-width in $container-max-widths {
+    @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+      min-width: ($container-max-width - $grid-gutter-width);
+    }
+  }
+
+  &:not(:last-of-type) {
+    margin-right: 1rem;
+  }
+}

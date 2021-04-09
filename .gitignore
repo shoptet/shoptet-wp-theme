@@ -9,5 +9,4 @@ src/
 /languages/*.mo
 /deployment*
 /vendor
-package-lock.json
 node_modules/

@@ -19,10 +19,7 @@ module.exports = function(grunt) {
                     'shoptet.scss',
                     'shoptet/*.scss',
                 ],
-                tasks: ['sass'],
-                options: {
-                    livereload: 35729
-                }
+                tasks: ['sass']
             },
         }
     });
