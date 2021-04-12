@@ -9,3 +9,4 @@ src/
 /languages/*.mo
 /deployment*
 /vendor
+/assets
