@@ -1,6 +1,6 @@
 .display-img {
   @include display-img;
-  padding-bottom: 45%;
+  padding-bottom: 60%;
   
   @include media-breakpoint-up(md) {
     padding-bottom: 35%;

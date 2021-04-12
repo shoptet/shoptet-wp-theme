@@ -7908,7 +7908,7 @@ h6, .h6 {
 .display-img {
   position: relative;
   overflow: hidden;
-  padding-bottom: 45%;
+  padding-bottom: 60%;
 }
 .display-img img {
   position: absolute;
@@ -7958,7 +7958,7 @@ h6, .h6 {
 .billboard-img {
   position: relative;
   overflow: hidden;
-  padding-bottom: 45%;
+  padding-bottom: 60%;
 }
 .billboard-img img {
   position: absolute;
@@ -8034,7 +8034,7 @@ h6, .h6 {
   padding: 1rem;
   border-radius: 15px;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .block {
     padding: 3rem 5rem;
   }
