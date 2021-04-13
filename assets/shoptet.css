@@ -7894,6 +7894,14 @@ textarea.form-control {
 .swipeable-item:not(:last-of-type) {
   margin-right: 1rem;
 }
+.swipeable-item img, .swipeable-item a {
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
 
 @media (min-width: 576px) {
   .swipeable-item-sm {
