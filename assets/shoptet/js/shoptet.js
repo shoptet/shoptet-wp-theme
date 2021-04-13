@@ -120,33 +120,49 @@ $(document).ready(function(){
 
 });
 
+
+
 $(function() {
 
-    var slider = document.querySelector('.swipeable');
-    var isDown = false;
-    var startX;
-    var scrollLeft;
+    function initSlider(slider) {
+        isDown = false;
+        isMoving = false;
+        var isDown;
+        var startX;
+        var scrollLeft;
+        $(slider).find('a[href]').on('click', function (e) {
+            if (isMoving) {
+                e.preventDefault();
+            }
+            isMoving = false;
+        } );
+        slider.addEventListener('mousedown', function(e) {
+            isDown = true;
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+        slider.addEventListener('mouseleave', function() {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+        slider.addEventListener('mouseup', function() {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+        slider.addEventListener('mousemove', function(e) {
+            if(!isDown) return;
+            isMoving = true;
+            e.preventDefault();
+            slider.classList.add('active');
+            var x = e.pageX - slider.offsetLeft;
+            var walk = x - startX;
+            slider.scrollLeft = scrollLeft - walk;
+        });
+    }
+
+    var sliders = document.querySelectorAll('.swipeable');
+    for (var i = 0; i < sliders.length; i++) {
+        initSlider(sliders[i])
+    }
  
-    slider.addEventListener('mousedown', function(e) {
-      isDown = true;
-      slider.classList.add('active');
-      startX = e.pageX - slider.offsetLeft;
-      scrollLeft = slider.scrollLeft;
-    });
-    slider.addEventListener('mouseleave', function() {
-      isDown = false;
-      slider.classList.remove('active');
-    });
-    slider.addEventListener('mouseup', function() {
-      isDown = false;
-      slider.classList.remove('active');
-    });
-    slider.addEventListener('mousemove', function(e) {
-      if(!isDown) return;
-      e.preventDefault();
-      var x = e.pageX - slider.offsetLeft;
-      var walk = x - startX;
-      slider.scrollLeft = scrollLeft - walk;
-    });
- 
-  })
+});

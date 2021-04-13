@@ -26,7 +26,7 @@ $colorbox-path: "../src/dist/img/colorbox/";
 @import "vendor/bs/scss/progress";
 @import "vendor/bs/scss/alert";
 @import "vendor/bs/scss/code";
-@import "vendor/bs/scss/card";
+//@import "vendor/bs/scss/card";
 @import "vendor/bs/scss/close";
 @import "vendor/bs/scss/tooltip";
 
@@ -61,3 +61,4 @@ $colorbox-path: "../src/dist/img/colorbox/";
 @import "shoptet/block";
 @import "shoptet/forms";
 @import "shoptet/swipeable";
+@import "shoptet/card";

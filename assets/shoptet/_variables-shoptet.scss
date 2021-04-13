@@ -54,3 +54,10 @@ $content-box-padding-x: $grid-gutter-width;
 $article-padding: 15px 20px;
 
 $social-share-icon-size: 2.5rem;
+
+$swipeable-sm-items: (
+  sm: 1,
+  md: 1,
+  lg: 2,
+  xl: 3
+);

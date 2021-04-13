@@ -36,3 +36,11 @@
     margin-right: 1rem;
   }
 }
+
+.swipeable-item-sm {
+  @each $breakpoint, $container-max-width in $container-max-widths {
+    @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+      min-width: ($container-max-width - $grid-gutter-width - (16px * (map-get($swipeable-sm-items, $breakpoint)-1)))/map-get($swipeable-sm-items, $breakpoint);
+    }
+  }
+}

@@ -19,6 +19,10 @@
   background-color: $gray-200;
 }
 
+.bg-gray-dark {
+  background-color: $gray-400;
+}
+
 .box-shadow {
   box-shadow: 0px 10px 5px 0px rgba($black,.11);
 }
@@ -26,6 +30,8 @@
 .rounded {
   border-radius: 15px;
   overflow: hidden;
+
+  @include rounded-overflow-fix;
 }
 
 .font-weight-bold {
@@ -43,5 +49,13 @@
 .fs-xl-125 {
   @include media-breakpoint-up(xl) {
     font-size: 125%;
+  }
+}
+
+.link-body {
+  color: $body-color;
+  
+  @include hover-focus {
+    color: $body-color;
   }
 }

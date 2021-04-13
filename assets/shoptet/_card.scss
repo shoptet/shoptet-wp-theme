@@ -1,0 +1,31 @@
+.card {
+  position: relative;
+  background: $white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0px 10px 5px 0px rgba($black,.11);
+  transition: all 100ms ease;
+
+  @include rounded-overflow-fix;
+}
+
+.card-hover {
+  @include hover-focus {
+    box-shadow: 0px 15px 15px 0px rgba($black,.11);
+    transition: all 100ms ease;
+  }
+}
+
+.card-more {
+  position: relative;
+  height: 15rem;
+  overflow: hidden;
+}
+
+.card-more-button {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding-top: 5rem;
+  background: linear-gradient(180deg, rgba($white,0) 0%, rgba($white,1) 75%);
+}
