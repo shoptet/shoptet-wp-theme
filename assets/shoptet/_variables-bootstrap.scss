@@ -21,6 +21,9 @@ $input-btn-line-height: 1;
 $btn-font-weight: 400;
 $input-border-radius: 50px;
 
+$custom-select-border-radius: 50px;
+$custom-select-padding-x: 1.5rem;
+
 $btn-border-radius: 50px;
 $btn-padding-y: .8rem;
 $btn-padding-x: 2.5rem;
@@ -81,7 +84,8 @@ $h4-font-size: 1.218rem;
 $h5-font-size: 1.118rem;
 $h6-font-size: 1rem;
 
-$custom-select-indicator: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 3'%3E%3Cpath fill='%2314b1ef' d='M2 3L0 0h4z'/%3E%3C/svg%3E");
+$custom-select-indicator: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 3'%3E%3Cpath fill='%23444444' d='M2 3L0 0h4z'/%3E%3C/svg%3E");
+$custom-select-bg-size: 12px 15px;
 
 $box-shadow-sm: 0 0 .3rem rgba($black, .15);
 $box-shadow: 0 0 .65rem rgba($black, .15);
