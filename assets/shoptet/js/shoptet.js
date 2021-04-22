@@ -211,3 +211,21 @@ $(function() {
         lastScrollTop = st;
     }
 });
+
+// Smooth scroll
+$(document).on('click', 'a[href^="#"]:not([data-toggle]), a[href^="\\/#"]', function (e) {
+    var href = $.attr(this, 'href');
+    if (href.charAt(0) === '/' ) {
+        href = href.slice(1);
+    }
+    var $target = $(href);
+    if ($target.length == 0) {
+        return;
+    }
+    e.preventDefault();
+    $('html, body').animate({
+        scrollTop: $target.offset().top
+    }, 500, function () {
+        window.location.hash = href;
+    });
+});
