@@ -6273,7 +6273,7 @@ button.bg-orange:focus {
 }
 
 .body-fixed-nav {
-  padding-top: 80px;
+  padding-top: 60px;
 }
 
 .icon-container {
@@ -7886,23 +7886,8 @@ h6, .h6 {
   margin-right: auto;
 }
 
-.billboard-img {
-  position: relative;
-  overflow: hidden;
-  padding-bottom: 60%;
-}
-.billboard-img img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  height: auto;
-  width: 100%;
-  max-width: none;
-  transform: translate(-50%, -50%);
-}
 @media (min-width: 768px) {
   .billboard-img {
-    padding-bottom: 35%;
     max-width: 80%;
   }
 }
