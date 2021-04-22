@@ -166,3 +166,48 @@ $(function() {
     }
  
 });
+
+$(function() {
+    var didScroll;
+    var st;
+    var navbarHeight;
+    var $navigation = $('.navigation');
+    var lastScrollTop = $(window).scrollTop();
+    var delta = 5;
+    var shadowHeight = 10;
+    var $adminBar = $('#wpadminbar');
+
+    if ($adminBar.length > 0) {
+        $navigation.css('top', $adminBar.outerHeight());
+    }
+
+    $(window).on('scroll', function() {
+        didScroll = true;
+    });
+
+    setInterval(function() {
+        if (didScroll) {
+            hasScrolled();
+            didScroll = false;
+        }
+    }, 250);
+
+    function hasScrolled() {
+        st = $(window).scrollTop();
+        navbarHeight = ($navigation.outerHeight() + shadowHeight);
+        
+        if (Math.abs(lastScrollTop - st) <= delta) {
+            return;
+        }
+        
+        if (st > lastScrollTop && st > navbarHeight){
+            $navigation.css('top', (-1*navbarHeight));
+        } else {
+            if (st + $(window).height() < $(document).height()) {
+                $navigation.css('top', ($adminBar.length > 0 ? $adminBar.outerHeight() : 0));
+            }
+        }
+        
+        lastScrollTop = st;
+    }
+});
