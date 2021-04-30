@@ -212,6 +212,11 @@ $(function() {
     }
 });
 
+
+$(document).on('click', '.navigation a[href^="\\/#"]', function (e) {
+    $('.navigation-menu').collapse('hide');
+});
+
 // Smooth scroll
 $(document).on('click', 'a[href^="#"]:not([data-toggle]), a[href^="\\/#"]', function (e) {
     var href = $.attr(this, 'href');
