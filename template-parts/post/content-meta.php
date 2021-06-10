@@ -2,7 +2,7 @@
     <?php
         $post_date = get_the_date('d. m. Y');
         if ( $post_date ) {
-            echo '<div class="entry-date"><i class="fas fa-calendar-alt"></i>' . apply_filters( 'entry_date', $post_date ) . '</div>';
+            echo '<div class="entry-date"><i class="fas fa-calendar-alt"></i>' . apply_filters( 'entry_date', $post_date, get_post() ) . '</div>';
         }
 
         $post_author = get_the_author();
