@@ -1,6 +1,7 @@
 <div class="entry-meta">
     <?php
-        $post_date = get_the_date('d. m. Y');
+        $date_format = get_option('date_format');
+        $post_date = get_the_date($date_format);
         if ( $post_date ) {
             echo '<div class="entry-date"><i class="fas fa-calendar-alt"></i>' . apply_filters( 'entry_date', $post_date, get_post() ) . '</div>';
         }
