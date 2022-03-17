@@ -63,12 +63,12 @@ msgid ""
 "podminky-ochrany-osobnich-udaju/\" target=\"_blank\">privacy policy</a></p>"
 msgstr ""
 "<p>Üzenet elküldésével elfogadja az <a href=\"https://www.shoptet.hu/"
-"adatvedelmi-iranyelveket/\" target=\"_blank\">adatvédelmi irányelveket</a></"
+"adatvedelmi-iranyelvek/\" target=\"_blank\">adatvédelmi irányelveket</a></"
 "p>"
 
 #: comments.php:77
 msgid "Write comment"
-msgstr "Írj megjegyzést"
+msgstr "Írjon megjegyzést"
 
 #: functions.php:58 functions.php:59 functions.php:60
 msgid "Archive"
