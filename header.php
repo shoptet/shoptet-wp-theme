@@ -11,6 +11,10 @@
 
   <body <?php body_class(isset($class) ? $class : ''); ?>>
 
+    <?php if (defined('ABOVE_HEADER')) {
+        get_template_part( 'src/template-parts/page/header', 'above' );
+    } ?>
+
     <header id="header" class="header">
         <div class="header-inner container">
             <div id="shp_header">
