@@ -17,7 +17,13 @@
         the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
     } ?>
 
-    <?php get_template_part( 'template-parts/post/content', 'meta' ); ?>
+    <?php
+    if (defined('CUSTOM_POST_CONTENT_META')) {
+        get_template_part( 'src/template-parts/post/content', 'meta' );
+    } else {
+        get_template_part( 'template-parts/post/content', 'meta' );
+    }
+    ?>
 
     <div class="entry-summary">
         <?php the_excerpt(); ?>

@@ -2,7 +2,11 @@
 
     echo '<h1>' . get_the_title() . '</h1>';
 
-    get_template_part( 'template-parts/post/content', 'meta' );
+    if (defined('CUSTOM_POST_CONTENT_META')) {
+        get_template_part( 'src/template-parts/post/content', 'meta' );
+    } else {
+        get_template_part( 'template-parts/post/content', 'meta' );
+    }
 
     the_content();
 
