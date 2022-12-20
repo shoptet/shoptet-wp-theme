@@ -16,7 +16,7 @@
 
         <h1><?php single_cat_title(); ?></h1>
 
-        <?php echo category_description(); ?>
+        <?php echo do_shortcode(category_description()); ?>
 
         <?php
             if ( $category_image ) {
