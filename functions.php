@@ -189,32 +189,6 @@ function shoptet_theme_enqueue_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'shoptet_theme_enqueue_scripts', 1 );
 
-/* Disable favicon uploader - Shoptet favicon will be the same everywhere */
-function remove_custom_favicon_option($wp_customize) {
-    $wp_customize->remove_control('site_icon');
-}
-add_action( 'customize_register', 'remove_custom_favicon_option', 20, 1 );
-
-/* Add Shoptet favicon */
-function shp_add_favicon(){ ?>
-    <!-- Custom Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/scaffolding/img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri(); ?>/scaffolding/img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri(); ?>/scaffolding/img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/scaffolding/img/favicon/site.webmanifest">
-    <link rel="mask-icon" href="<?php echo get_template_directory_uri(); ?>/scaffolding/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-<?php }
-add_action('wp_head','shp_add_favicon');
-
-/* Redirect to Shoptet favicon.ico */
-function shp_favicon_redirect(){
-    wp_redirect( get_template_directory_uri() . "/scaffolding/img/favicon/favicon.ico" );
-    exit;
-}
-add_action( 'do_faviconico','shp_favicon_redirect');
-
 /**
  * Register widgets
  */
