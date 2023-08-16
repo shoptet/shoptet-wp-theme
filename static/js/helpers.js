@@ -1,3 +1,12 @@
+var ready = function (callback) {
+  if (document.readyState != 'loading') callback();
+  else document.addEventListener('DOMContentLoaded', callback);
+};
+
+var slugify = function (text) {
+  return text && text.trim().replace(/\s+/g, '-').toLowerCase();
+};
+
 var sha256 = function sha256(ascii) {
 	function rightRotate(value, amount) {
 		return (value>>>amount) | (value<<(32 - amount));
