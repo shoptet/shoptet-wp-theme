@@ -175,6 +175,24 @@ if ( ! function_exists( 'main_menu_setup' ) ):
 endif;
 add_action( 'after_setup_theme', 'main_menu_setup' );
 
+function get_language() {
+    return explode('_', get_locale())[0];
+}
+
+function get_currency() {
+    $currency = false;
+    $lang = get_language();
+    $currencies = [
+        'cs' => 'CZK',
+        'sk' => 'EUR',
+        'hu' => 'HUF',
+    ];
+    if (isset($currencies[$lang])) {
+        $currency = $currencies[$lang];
+    }
+    return $currency;
+}
+
 /**
  * Load site scripts
  */
@@ -182,6 +200,30 @@ function shoptet_theme_enqueue_scripts() {
 	$template_url = get_template_directory_uri();
 
     wp_enqueue_script('shp-jquery', $template_url . '/src/dist/js/build.js');
+
+    wp_localize_script('shp-jquery', 'dl', [
+        'page' => apply_filters('shp_dl_page', [
+            'currency' => get_currency(),
+            'category' => 'not_available_DL',
+            'subCategory' => 'not_available_DL',
+            'subSubCategory' => 'not_available_DL',
+            'environment' => defined('WP_DEBUG') && WP_DEBUG ? 'dev' : 'live',
+            'language' => get_language(),
+            'hostname' => $_SERVER['SERVER_NAME'],
+            'title' => get_the_title(),
+            'path' => 'not_available_DL',
+            'url' => 'not_available_DL',
+            'params' => '# / ?',
+            'type' => 'not_available_DL',
+        ]),
+        'user' => apply_filters('shp_dl_user', [
+            'accountHash' => 'not_available_DL',
+            'email' => 'not_available_DL',
+            'accountId' => 'not_available_DL',
+            'name' => 'not_available_DL',
+            'surname' => 'not_available_DL',
+        ]),
+    ]);
 
 	//Main Style
 	wp_enqueue_style('shoptet', get_template_directory_uri() . '/scaffolding/shoptet.css');
@@ -368,3 +410,28 @@ function shp_bootstrap_alert( $atts, $shortcode_content ) {
     return $content;
 }
 add_shortcode( 'shp_bootstrap_alert', 'shp_bootstrap_alert' );
+
+add_action( 'customize_register', 'shp_customize_register' );
+
+function shp_customize_register( $wp_customize ) {
+    $wp_customize->add_section('shp_wp_analytics', [
+        'title' => 'Shoptet WP Analytics',
+    ] );
+    $wp_customize->add_setting('gtm_id', [
+        'default' => '',
+    ] );
+    $wp_customize->add_control('gtm_id', [
+        'label' => 'GTM ID',
+        'section' => 'shp_wp_analytics',
+        'type' => 'text',
+    ] );
+    $wp_customize->add_setting('cookiebot_id', [
+        'default' => '',
+    ] );
+    $wp_customize->add_control('cookiebot_id', [
+        'label' => 'Cookiebot ID',
+        'section' => 'shp_wp_analytics',
+        'type' => 'text',
+    ] );
+    
+  }

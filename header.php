@@ -4,12 +4,55 @@
     <title><?php wp_title(); ?></title>
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+
+    <?php if (get_theme_mod( 'gtm_id' ) && get_theme_mod( 'cookiebot_id' )): ?>
+        <script data-cookieconsent="ignore">
+            window.dataLayer = window.dataLayer || [];
+            dataLayer.push({
+                'event': 'loaded_starting',
+                'timestampStart': new Date().getTime(),
+            });
+        </script>
+        <script data-cookieconsent="ignore">
+            var load_gtm = (function (e) {
+                var loaded = false;
+                return function () {
+                    if (!loaded) {
+                        loaded = true;
+                        (function(w,d,s,l,i){ w[l]=w[l]||[];w[l].push({ 'gtm.start': new Date().getTime(),event:'gtm.js' }); var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                        })(window,document,'script','dataLayer','<?= get_theme_mod( 'gtm_id' ) ?>');
+                        dataLayer.push({
+                            'event': 'loaded_gtm',
+                            'timestampGtm': new Date().getTime(),
+                        });
+                    }
+                };
+            })();
+            window.addEventListener('CookiebotOnDialogDisplay', load_gtm, false);
+            window.addEventListener('CookiebotOnConsentReady', load_gtm, false);
+            window.addEventListener('DOMContentLoaded', () => setTimeout(() => load_gtm(), 5000), false);
+        </script>
+        <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-consentmode="disabled" data-cbid="<?= get_theme_mod( 'cookiebot_id' ) ?>" type="text/javascript" async></script>
+        <script data-cookieconsent="ignore">
+            dataLayer.push({
+                'event': 'loaded_cookiebot',
+                'timestampCookiebot': new Date().getTime(),
+            });
+        </script>
+    <?php endif; ?>
+
     <?php wp_head(); ?>
 	</head>
 
   <body <?php body_class(isset($class) ? $class : ''); ?>>
+
+    <?php if (get_theme_mod( 'gtm_id' ) && get_theme_mod( 'cookiebot_id' )): ?>
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=<?= get_theme_mod( 'gtm_id' ) ?>" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        </noscript>
+    <?php endif; ?>
 
     <?php if (defined('ABOVE_HEADER')) {
         get_template_part( 'src/template-parts/page/header', 'above' );
