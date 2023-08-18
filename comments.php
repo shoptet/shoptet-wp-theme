@@ -54,13 +54,13 @@
             'author' =>
                 '<div class="row"><div class="col-md-4"><p class="comment-form-author"><label for="author">' . __( 'Name', 'shoptet' ) .
                 ( $req ? ' <span class="required">*</span>' : '' ) . '</label>' .
-                '<input id="author" name="author" type="text" [data-name] value="' . esc_attr( $commenter['comment_author'] ) .
+                '<input id="author" name="author" type="text" data-name value="' . esc_attr( $commenter['comment_author'] ) .
                 '" size="30" class="form-control"/></p></div>',
 
             'email' =>
                 '<div class="col-md-4"><p class="comment-form-email"><label for="email">' . __( 'Email', 'shoptet' ) .
                 ( $req ? ' <span class="required">*</span>' : '' ) . '</label>' .
-                '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+                '<input id="email" name="email" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) .
                 '" size="30" class="form-control"/></p></div>',
 
             'url' =>
