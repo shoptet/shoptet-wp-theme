@@ -30,7 +30,7 @@
     </div>
 
     <div class="entry-more">
-        <a href="<?php the_permalink(); ?>" class="btn btn-secondary" id="article~<?php get_the_ID() ?>"><?php _e('Read all', 'shoptet') ?></a>
+        <a href="<?php the_permalink(); ?>" class="btn btn-secondary" id="article~<?php the_ID() ?>"><?php _e('Read all', 'shoptet') ?></a>
     </div>
 
     <?php if ( get_the_post_thumbnail() !== '' && ! is_single() ) : ?>
