@@ -54,7 +54,7 @@
             'author' =>
                 '<div class="row"><div class="col-md-4"><p class="comment-form-author"><label for="author">' . __( 'Name', 'shoptet' ) .
                 ( $req ? ' <span class="required">*</span>' : '' ) . '</label>' .
-                '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
+                '<input id="author" name="author" type="text" [data-name] value="' . esc_attr( $commenter['comment_author'] ) .
                 '" size="30" class="form-control"/></p></div>',
 
             'email' =>

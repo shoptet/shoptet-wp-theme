@@ -201,6 +201,13 @@ function shoptet_theme_enqueue_scripts() {
 
     wp_enqueue_script('shp-jquery', $template_url . '/src/dist/js/build.js');
 
+    wp_localize_script('shp-jquery', 'global', [
+        'post' => [
+            'id' => get_the_ID(),
+            'title' => get_the_title(),
+        ],
+    ]);
+
     wp_localize_script('shp-jquery', 'dl', [
         'page' => apply_filters('shp_dl_page', [
             'currency' => get_currency(),
