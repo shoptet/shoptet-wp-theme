@@ -137,7 +137,7 @@ msgstr ""
 
 #: template-parts/post/content-excerpt.php:27
 msgid "Read all"
-msgstr "Olvassa el az egészet"
+msgstr "Olvasd el az egészet"
 
 #: template-parts/post/content-section-primary.php:12
 msgid "We are sorry, but requested page was not found"
