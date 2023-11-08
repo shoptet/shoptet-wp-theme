@@ -235,6 +235,19 @@ function shoptet_theme_enqueue_scripts() {
 	//Main Style
 	wp_enqueue_style('shoptet', get_template_directory_uri() . '/scaffolding/shoptet.css');
 	wp_enqueue_style('default', get_template_directory_uri() . '/src/dist/css/main.css');
+
+    // Remove Cookiebot logo
+    wp_register_style('cookiebot-style', false);
+    wp_enqueue_style('cookiebot-style');
+    wp_add_inline_style('cookiebot-style', '
+      a#CybotCookiebotDialogPoweredbyCybot,
+      div#CybotCookiebotDialogPoweredByText {
+        display: none;
+      }
+      #CookiebotWidget .CookiebotWidget-body .CookiebotWidget-main-logo {
+        display: none;
+      }
+    ');
 }
 add_action( 'wp_enqueue_scripts', 'shoptet_theme_enqueue_scripts', 1 );
 
