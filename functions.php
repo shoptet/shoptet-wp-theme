@@ -186,6 +186,7 @@ function get_currency() {
         'cs' => 'CZK',
         'sk' => 'EUR',
         'hu' => 'HUF',
+        'en' => 'EUR',
     ];
     if (isset($currencies[$lang])) {
         $currency = $currencies[$lang];
