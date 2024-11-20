@@ -209,7 +209,7 @@ function shoptet_theme_enqueue_scripts() {
         ],
     ]);
 
-    wp_localize_script('shp-jquery', 'dl', [
+    $datalayer = [
         'page' => apply_filters('shp_dl_page', [
             'currency' => get_currency(),
             'category' => 'not_available_DL',
@@ -231,7 +231,23 @@ function shoptet_theme_enqueue_scripts() {
             'name' => 'not_available_DL',
             'surname' => 'not_available_DL',
         ]),
-    ]);
+    ];
+
+    if (is_search()) {
+        global $wp_query;
+        $datalayer['search'] = [
+          'type' => 'page',
+          'term' => get_search_query(),
+          'results' => [
+            'articles' => $wp_query->found_posts,
+            'categories' => -1,
+            'products' => -1,
+            'other' => -1,
+            ],
+        ];
+    }
+
+    wp_localize_script('shp-jquery', 'dl', $datalayer);
 
 	//Main Style
 	wp_enqueue_style('shoptet', get_template_directory_uri() . '/scaffolding/shoptet.css');
