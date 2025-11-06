@@ -238,6 +238,7 @@ function shoptet_theme_enqueue_scripts() {
         $datalayer['search'] = [
           'type' => 'page',
           'term' => get_search_query(),
+          'location' => 'header',
           'results' => [
             'articles' => $wp_query->found_posts,
             'categories' => -1,
